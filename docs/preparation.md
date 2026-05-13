@@ -47,3 +47,15 @@ Le projet sera développé avec Next.js et React.
 - React
 - TypeScript
 - CSS / Tailwind CSS
+
+## Wireframe potentielle de la page d'accueil
++----------------------------------+
+| Logo        Menu navigation      |
++----------------------------------+
+|         Barre de recherche       |
++----------------------------------+
+| Livres populaires                |
+| [Livre] [Livre] [Livre]          |
++----------------------------------+
+| Footer                           |
++----------------------------------+
