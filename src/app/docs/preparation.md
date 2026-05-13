@@ -1,5 +1,8 @@
 # Projet Bibliothèque Web
-
+## Noms des membres
+Dabire Nomwende Chadrac Ebenezer
+Deogracias ontshim mubilulu
+moctar  souleymane thiam
 ## Description du projet
 
 Notre projet consiste à créer une application web de gestion de bibliothèque.
@@ -14,6 +17,7 @@ Le projet sera développé avec Next.js et React.
 - Permettre la recherche de livres
 - Afficher les détails des livres
 - Utiliser une bonne structure de projet
+- Acheter des livres 
 
 ## Inspirations et références
 
@@ -40,7 +44,7 @@ Le projet sera développé avec Next.js et React.
 - Auteur
 - Description
 - Bouton d’emprunt
-
+-Achat 
 ## Technologies utilisées
 
 - Next.js
