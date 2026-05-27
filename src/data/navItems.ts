@@ -1,4 +1,4 @@
-export type PageName = 'accueil' | 'livres' | 'categories' | 'contact';
+export type PageName = 'accueil' | 'livres' | 'categories' | 'contact' | 'detailLivre';
  
 export const navItems = [
 
