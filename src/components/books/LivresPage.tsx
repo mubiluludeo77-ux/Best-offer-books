@@ -17,29 +17,21 @@ type LivresPageProps = {
 export default function LivresPage({ onSelectBook }: LivresPageProps) {
 
   return (
-<main className="bg-slate-50 py-20">
-<Container>
-<SectionTitle
-
-          eyebrow="Catalogue"
-
-          title="Tous nos livres"
-
-          description="Découvrez notre sélection complète de livres disponibles."
-
+    <main className="bg-slate-50 py-20">
+      <Container>
+        <SectionTitle
+                  eyebrow="Catalogue"
+                  title="Tous nos livres"
+                  description="Découvrez notre sélection complète de livres disponibles."
         />
- 
+        
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
           {books.map((book) => (
-<BookCard key={book.id} book={book} onSelectBook={onSelectBook} />
-
+           <BookCard key={book.id} book={book} onSelectBook={onSelectBook} />
           ))}
-</div>
-</Container>
+        </div>
+      </Container>
 </main>
-
   );
-
 }
  

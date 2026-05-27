@@ -1,8 +1,13 @@
 import Image from 'next/image';
 import Button from '@/components/common/Button';
 import Container from '@/components/common/Container';
+import { PageName } from '@/data/navItems';
 
-export default function Hero() {
+type HeroProps = {
+  onChangePage: (page: PageName) => void;
+};
+
+export default function Hero({ onChangePage }: HeroProps) {
   return (
     <section className="bg-[#f8f6f2] py-20">
       <Container className="grid items-center gap-10 lg:grid-cols-2">
@@ -21,8 +26,14 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <Button href="/livres">Découvrir les livres</Button>
-            <Button href="/categories" variant="secondary">
+            <Button onClick={() => onChangePage('livres')}>
+              Découvrir les livres
+            </Button>
+
+            <Button
+              variant="secondary"
+              onClick={() => onChangePage('categories')}
+            >
               Voir les catégories
             </Button>
           </div>

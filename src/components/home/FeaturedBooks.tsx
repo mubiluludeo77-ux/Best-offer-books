@@ -1,37 +1,33 @@
 import { featuredBooks } from '@/data/books';
-
+import { Book } from '@/types/book';
 import BookCard from '@/components/books/BookCard';
-
 import Container from '@/components/common/Container';
-
 import SectionTitle from '@/components/common/SectionTitle';
- 
-export default function FeaturedBooks() {
 
+type FeaturedBooksProps = {
+  onSelectBook: (book: Book) => void;
+};
+
+export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
   return (
-<section className="bg-slate-50 py-20">
-<Container>
-<SectionTitle
-
+    <section className="bg-slate-50 py-20">
+      <Container>
+        <SectionTitle
           eyebrow="Sélection"
-
           title="Livres populaires"
-
           description="Découvrez une sélection de livres choisis pour inspirer, divertir et accompagner votre lecture."
-
         />
- 
+
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-
           {featuredBooks.map((book) => (
-<BookCard key={book.id} book={book} />
-
+            <BookCard
+              key={book.id}
+              book={book}
+              onSelectBook={onSelectBook}
+            />
           ))}
-</div>
-</Container>
-</section>
-
+        </div>
+      </Container>
+    </section>
   );
-
 }
- 

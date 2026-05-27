@@ -1,9 +1,13 @@
-import Link from 'next/link';
 import { categories } from '@/data/categories';
 import Container from '@/components/common/Container';
 import SectionTitle from '@/components/common/SectionTitle';
+import { PageName } from '@/data/navItems';
 
-export default function Categories() {
+type CategoriesProps = {
+  onChangePage: (page: PageName) => void;
+};
+
+export default function Categories({ onChangePage }: CategoriesProps) {
   return (
     <section className="bg-white py-20">
       <Container>
@@ -16,10 +20,11 @@ export default function Categories() {
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((category) => (
-            <Link
+            <button
               key={category.id}
-              href={category.href}
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-md"
+              type="button"
+              onClick={() => onChangePage('categories')}
+              className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-left transition hover:-translate-y-1 hover:bg-white hover:shadow-md"
             >
               <h3 className="text-lg font-bold text-slate-900">
                 {category.name}
@@ -28,7 +33,7 @@ export default function Categories() {
               <p className="mt-3 text-sm leading-6 text-slate-600">
                 {category.description}
               </p>
-            </Link>
+            </button>
           ))}
         </div>
       </Container>
