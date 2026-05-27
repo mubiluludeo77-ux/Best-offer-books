@@ -8,4 +8,5 @@ export type Book = {
   category: string;
   description: string;
   featured: boolean;
+  variants: string[];
 };
