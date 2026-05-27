@@ -1,15 +1,26 @@
-import Link from 'next/link';
-import { navItems } from '@/data/navItems';
+import Link from "next/link";
+import { navItems } from "@/data/navItems";
  
-export default function MenuNav() {
+type MenuNavProps = {
+  className?: string;
+  linkClassName?: string;
+  onLinkClick?: () => void;
+};
+ 
+export default function MenuNav({
+  className = "",
+  linkClassName = "",
+  onLinkClick,
+}: MenuNavProps) {
   return (
 <nav aria-label="Navigation principale">
-<ul className="flex items-center gap-6 text-sm font-medium">
+<ul className={className}>
         {navItems.map((item) => (
 <li key={item.href}>
 <Link
               href={item.href}
-              className="text-slate-700 transition-colors hover:text-slate-950"
+              onClick={onLinkClick}
+              className={`text-slate-700 transition-colors hover:text-slate-950 ${linkClassName}`}
 >
               {item.label}
 </Link>
