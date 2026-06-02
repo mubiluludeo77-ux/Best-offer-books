@@ -14,10 +14,10 @@ export default function Logo({ variant = 'default' }: LogoProps) {
   return (
     <Link href="/" className="flex items-center gap-3">
       <Image
-        src="/images/logo/logo-openbook.webp"
+        src="/images/logo/logo-best-offer-books1.webp"
         alt="Logo Best OfferBook"
-        width={42}
-        height={42}
+        width={100}
+        height={100}
         priority
         className="rounded-md"
       />
