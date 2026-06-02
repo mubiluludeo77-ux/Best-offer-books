@@ -3,9 +3,9 @@ import SectionTitle from '@/components/common/SectionTitle';
 
 export default function Newsletter() {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-[var(--color-surface)] py-20">
       <Container>
-        <div className="rounded-3xl bg-[#f8f6f2] px-6 py-12 text-center">
+        <div className="rounded-3xl bg-[var(--color-background)] px-6 py-12 text-center">
           <SectionTitle
             eyebrow="Newsletter"
             title="Recevez nos nouvelles offres"
@@ -17,12 +17,12 @@ export default function Newsletter() {
             <input
               type="email"
               placeholder="Votre adresse courriel"
-              className="min-h-12 flex-1 rounded-full border border-slate-300 px-5 text-sm outline-none focus:border-slate-900"
+              className="min-h-12 flex-1 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-5 text-sm text-[var(--color-primary)] outline-none focus:border-[var(--color-primary)]"
             />
 
             <button
               type="submit"
-              className="rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+              className="rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
             >
               S’inscrire
             </button>

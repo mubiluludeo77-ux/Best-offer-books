@@ -4,7 +4,7 @@ type SectionTitleProps = {
   eyebrow?: string;
   align?: 'left' | 'center';
 };
- 
+
 export default function SectionTitle({
   title,
   description,
@@ -12,22 +12,22 @@ export default function SectionTitle({
   align = 'left',
 }: SectionTitleProps) {
   return (
-<div className={align === 'center' ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
+    <div className={align === 'center' ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>
       {eyebrow && (
-<p className="mb-2 text-sm font-semibold uppercase tracking-wide text-orange-700">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
           {eyebrow}
-</p>
+        </p>
       )}
- 
-      <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+
+      <h2 className="text-3xl font-bold tracking-tight text-[var(--color-primary)]">
         {title}
-</h2>
- 
+      </h2>
+
       {description && (
-<p className="mt-3 text-base leading-7 text-slate-600">
+        <p className="mt-3 text-base leading-7 text-[var(--color-muted)]">
           {description}
-</p>
+        </p>
       )}
-</div>
+    </div>
   );
 }

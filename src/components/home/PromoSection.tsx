@@ -4,7 +4,7 @@ import SectionTitle from '@/components/common/SectionTitle';
 
 export default function PromoSection() {
   return (
-    <section className="bg-slate-900 py-20 text-white">
+    <section className="bg-[var(--color-soft)] py-20">
       <Container>
         <SectionTitle
           eyebrow="Pourquoi nous choisir"
@@ -17,13 +17,13 @@ export default function PromoSection() {
           {benefits.map((benefit) => (
             <article
               key={benefit.id}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm"
             >
-              <h3 className="text-lg font-bold">
+              <h3 className="text-lg font-bold text-[var(--color-primary)]">
                 {benefit.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-300">
+              <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
                 {benefit.description}
               </p>
             </article>

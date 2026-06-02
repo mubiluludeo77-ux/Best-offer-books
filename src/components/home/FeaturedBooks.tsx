@@ -10,7 +10,7 @@ type FeaturedBooksProps = {
 
 export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
   return (
-    <section className="bg-slate-50 py-20">
+    <section className="bg-[var(--color-background)] py-20">
       <Container>
         <SectionTitle
           eyebrow="Sélection"

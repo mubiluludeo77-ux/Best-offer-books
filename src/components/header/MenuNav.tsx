@@ -26,10 +26,10 @@ export default function MenuNav({
                 onChangePage?.(item.page);
                 onLinkClick?.();
               }}
-              className={`transition-colors hover:text-slate-950 ${
+              className={`transition hover:text-[var(--color-primary)] ${
                 activePage === item.page
-                  ? 'font-semibold text-slate-950'
-                  : 'text-slate-700'
+                  ? 'font-semibold text-[var(--color-primary)]'
+                  : 'text-[var(--color-muted)]'
               } ${linkClassName}`}
             >
               {item.label}

@@ -9,7 +9,7 @@ type CategoriesProps = {
 
 export default function Categories({ onChangePage }: CategoriesProps) {
   return (
-    <section className="bg-white py-20">
+    <section className="bg-[var(--color-surface)] py-20">
       <Container>
         <SectionTitle
           eyebrow="Catégories"
@@ -24,13 +24,13 @@ export default function Categories({ onChangePage }: CategoriesProps) {
               key={category.id}
               type="button"
               onClick={() => onChangePage('categories')}
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-left transition hover:-translate-y-1 hover:bg-white hover:shadow-md"
+              className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 text-left transition hover:-translate-y-1 hover:bg-[var(--color-hover)] hover:shadow-md"
             >
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-[var(--color-primary)]">
                 {category.name}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-slate-600">
+              <p className="mt-3 text-sm leading-6 text-[var(--color-muted)]">
                 {category.description}
               </p>
             </button>

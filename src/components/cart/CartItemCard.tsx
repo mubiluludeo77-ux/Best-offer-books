@@ -15,7 +15,7 @@ export default function CartItemCard({
   onRemove,
 }: CartItemCardProps) {
   return (
-    <article className="grid gap-4 rounded-2xl border border-[var(--color-border)] bg-white p-4 shadow-sm sm:grid-cols-[120px_1fr]">
+    <article className="grid gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-sm sm:grid-cols-[120px_1fr]">
       <div className="relative h-40 overflow-hidden rounded-xl bg-[var(--color-background)] sm:h-full">
         <Image
           src={item.image}
@@ -43,19 +43,19 @@ export default function CartItemCard({
           <button
             type="button"
             onClick={() => onDecrease(item.id)}
-            className="rounded-full border border-[var(--color-border)] px-3 py-1 font-bold"
+            className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1 font-bold text-[var(--color-primary)] transition hover:bg-[var(--color-hover)]"
           >
             -
           </button>
 
-          <span className="min-w-8 text-center font-semibold">
+          <span className="min-w-8 text-center font-semibold text-[var(--color-primary)]">
             {item.quantity}
           </span>
 
           <button
             type="button"
             onClick={() => onIncrease(item.id)}
-            className="rounded-full border border-[var(--color-border)] px-3 py-1 font-bold"
+            className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1 font-bold text-[var(--color-primary)] transition hover:bg-[var(--color-hover)]"
           >
             +
           </button>
@@ -63,7 +63,7 @@ export default function CartItemCard({
           <button
             type="button"
             onClick={() => onRemove(item.id)}
-            className="ml-auto text-sm font-semibold text-[var(--color-secondary)]"
+            className="ml-auto text-sm font-semibold text-[var(--color-danger)] transition hover:opacity-80"
           >
             Supprimer
           </button>

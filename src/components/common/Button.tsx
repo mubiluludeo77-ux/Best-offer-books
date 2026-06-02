@@ -17,12 +17,13 @@ export default function Button({
   type = 'button',
 }: ButtonProps) {
   const baseClasses =
-    'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-colors';
+    'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition';
 
   const variantClasses = {
-    primary: 'bg-slate-900 text-white hover:bg-slate-700',
+    primary:
+      'bg-[var(--color-primary)] text-white hover:opacity-90',
     secondary:
-      'border border-slate-300 bg-white text-slate-900 hover:bg-slate-100',
+      'border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-primary)] hover:bg-[var(--color-hover)]',
   };
 
   const className = `${baseClasses} ${variantClasses[variant]}`;

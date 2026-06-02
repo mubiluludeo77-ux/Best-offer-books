@@ -19,7 +19,7 @@ export default function CartPage({
   onRemoveFromCart,
   onChangePage,
 }: CartPageProps) {
-  // Calcule le total du panier
+  // Total calculé à partir des prix et quantités
   const total = cartItems.reduce(
     (sum, item) => sum + item.unitPrice * item.quantity,
     0
@@ -35,7 +35,7 @@ export default function CartPage({
         />
 
         {cartItems.length === 0 ? (
-          <div className="mt-10 rounded-3xl bg-white p-8 text-center shadow-sm">
+          <div className="mt-10 rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 text-center shadow-sm">
             <p className="text-[var(--color-muted)]">
               Votre panier est vide pour le moment.
             </p>
@@ -43,7 +43,7 @@ export default function CartPage({
             <button
               type="button"
               onClick={() => onChangePage('livres')}
-              className="mt-6 rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-white"
+              className="mt-6 rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-[var(--color-surface)] transition hover:opacity-90"
             >
               Voir les livres
             </button>
@@ -62,13 +62,14 @@ export default function CartPage({
               ))}
             </div>
 
-            <aside className="h-fit rounded-3xl bg-white p-6 shadow-sm">
+            <aside className="h-fit rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm">
               <h2 className="text-xl font-bold text-[var(--color-primary)]">
                 Résumé
               </h2>
 
               <div className="mt-6 flex justify-between text-sm">
                 <span className="text-[var(--color-muted)]">Total</span>
+
                 <span className="font-bold text-[var(--color-primary)]">
                   {total.toFixed(2)} $
                 </span>
@@ -76,7 +77,7 @@ export default function CartPage({
 
               <button
                 type="button"
-                className="mt-6 w-full rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-white"
+                className="mt-6 w-full rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-[var(--color-surface)] transition hover:opacity-90"
               >
                 Passer à l’achat
               </button>

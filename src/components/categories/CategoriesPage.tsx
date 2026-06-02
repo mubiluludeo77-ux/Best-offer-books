@@ -11,7 +11,7 @@ type CategoriesPageProps = {
 
 export default function CategoriesPage({ onSelectBook }: CategoriesPageProps) {
   return (
-    <main className="bg-slate-50 py-20">
+    <main className="bg-[var(--color-background)] py-20">
       <Container>
         <SectionTitle
           eyebrow="Catégories"
@@ -28,11 +28,11 @@ export default function CategoriesPage({ onSelectBook }: CategoriesPageProps) {
             return (
               <section key={category.id}>
                 <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-slate-900">
+                  <h2 className="text-2xl font-bold text-[var(--color-primary)]">
                     {category.name}
                   </h2>
 
-                  <p className="mt-2 text-sm text-slate-600">
+                  <p className="mt-2 text-sm text-[var(--color-muted)]">
                     {category.description}
                   </p>
                 </div>
