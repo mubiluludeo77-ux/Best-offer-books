@@ -1,5 +1,6 @@
 import { Book } from '@/types/book';
 
+// Liste des livres affichés dans le site
 export const books: Book[] = [
   {
     id: 1,
@@ -24,7 +25,6 @@ export const books: Book[] = [
       },
     ],
   },
-
   {
     id: 2,
     title: "La psychologie de l'argent",
@@ -48,7 +48,6 @@ export const books: Book[] = [
       },
     ],
   },
-
   {
     id: 3,
     title: "Aime-toi et la vie t'aimera",
@@ -56,8 +55,7 @@ export const books: Book[] = [
     price: 22.99,
     image: '/images/books/aime-toi-vie-aimera.webp',
     category: 'Développement personnel',
-    description:
-      "Un ouvrage inspirant pour apprendre à mieux s'accepter.",
+    description: "Un ouvrage inspirant pour apprendre à mieux s'accepter.",
     featured: true,
     variants: [
       {
@@ -72,7 +70,6 @@ export const books: Book[] = [
       },
     ],
   },
-
   {
     id: 4,
     title: "Pourquoi on ne se dit plus je t'aime",
@@ -88,6 +85,29 @@ export const books: Book[] = [
         id: 'papier',
         label: 'Format papier',
         price: 19.99,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: 'One Piece',
+    author: 'Eiichiro Oda',
+    price: 16.99,
+    image: '/images/books/one-piece.webp',
+    category: 'Manga',
+    description:
+      'Un manga d’aventure incontournable qui suit Luffy et son équipage dans leur quête du trésor ultime.',
+    featured: true,
+    variants: [
+      {
+        id: 'papier',
+        label: 'Format papier',
+        price: 16.99,
+      },
+      {
+        id: 'collector',
+        label: 'Édition collector',
+        price: 24.99,
       },
     ],
   },

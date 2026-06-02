@@ -1,24 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f6f2;
-  --foreground: #1e293b;
+  --background: #06172f;
+  --foreground: #f8fafc;
 
   /* Palette principale du site */
-  --color-background: #f8f6f2;
+  --color-background: #06172f;
+  --color-page-background:
+    radial-gradient(circle at -10% -20%, rgb(0, 71, 177), transparent 35%),
+    radial-gradient(circle at 110% 0%, #00ccff, transparent 30%),
+    linear-gradient(135deg, #06172f 0%, #0f2f5f 55%, #082f49 100%);
+
   --color-surface: #ffffff;
-  --color-primary: #1e293b;
-  --color-secondary: #c97b63;
-  --color-muted: #64748b;
-  --color-border: #e2e8f0;
+  --color-primary: #06172f;
+  --color-secondary: #00a6d6;
+  --color-muted: #475569;
+  --color-border: #b7d7ea;
 
   /* Couleurs complémentaires */
   --color-card: #ffffff;
-  --color-soft: #eadbc8;
-  --color-hover: #f1ebe4;
+  --color-soft: #d3f3ff;
+  --color-hover: #e0f7ff;
+
+  /* Hero */
+  --color-hero-overlay: rgba(6, 23, 47, 0.68);
+  --color-hero-text: #ffffff;
+  --color-hero-muted: #e0f2fe;
 
   /* Pied de page */
-  --color-footer: #1e293b;
+  --color-footer: #06172f;
   --color-footer-text: #f8fafc;
   --color-footer-muted: #cbd5e1;
 
@@ -33,8 +43,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html,
 body {
-  background: var(--color-background);
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-page-background);
+  background-attachment: fixed;
   color: var(--color-primary);
   font-family: Arial, Helvetica, sans-serif;
 }

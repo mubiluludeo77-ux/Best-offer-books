@@ -23,4 +23,10 @@ export const categories = [
     bookCategory: 'Relation',
     description: 'Des lectures autour des émotions et des liens humains.',
   },
+  {
+    id: 5,
+    name: 'Mangas',
+    bookCategory: 'Manga',
+    description: 'Des aventures japonaises riches en action et en imagination.',
+  },
 ];
