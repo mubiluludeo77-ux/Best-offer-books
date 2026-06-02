@@ -2,15 +2,21 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Book } from '@/types/book';
+import { Book, BookVariant } from '@/types/book';
 import Container from '@/components/common/Container';
 
 type LivreDetailPageProps = {
   book: Book;
   onBack: () => void;
+  onAddToCart: (book: Book, variant: BookVariant) => void;
 };
 
-export default function LivreDetailPage({ book, onBack }: LivreDetailPageProps) {
+export default function LivreDetailPage({
+  book,
+  onBack,
+  onAddToCart,
+}: LivreDetailPageProps) {
+  // Variante actuellement sélectionnée par l'utilisateur
   const [selectedVariantId, setSelectedVariantId] = useState(
     book.variants[0].id
   );
@@ -22,7 +28,7 @@ export default function LivreDetailPage({ book, onBack }: LivreDetailPageProps) 
   return (
     <main className="bg-[var(--color-background)] py-20">
       <Container className="grid gap-10 lg:grid-cols-2">
-        <div className="relative h-[380px] overflow-hidden rounded-3xl bg-[var(--color-surface)] shadow-sm sm:h-[520px]">
+        <div className="relative h-[380px] overflow-hidden rounded-3xl bg-white shadow-sm sm:h-[520px]">
           <Image
             src={book.image}
             alt={book.title}
@@ -38,7 +44,7 @@ export default function LivreDetailPage({ book, onBack }: LivreDetailPageProps) 
             onClick={onBack}
             className="mb-6 text-sm font-semibold text-[var(--color-secondary)]"
           >
-            ← Retour aux livres
+            ← Retour
           </button>
 
           <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
@@ -75,7 +81,7 @@ export default function LivreDetailPage({ book, onBack }: LivreDetailPageProps) 
                   className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                     selectedVariant.id === variant.id
                       ? 'border-[var(--color-secondary)] bg-[var(--color-background)] text-[var(--color-secondary)]'
-                      : 'border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] hover:bg-[var(--color-background)]'
+                      : 'border-[var(--color-border)] bg-white text-[var(--color-muted)] hover:bg-[var(--color-background)]'
                   }`}
                 >
                   {variant.label}
@@ -83,6 +89,14 @@ export default function LivreDetailPage({ book, onBack }: LivreDetailPageProps) 
               ))}
             </div>
           </div>
+
+          <button
+            type="button"
+            onClick={() => onAddToCart(book, selectedVariant)}
+            className="mt-8 rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+          >
+            Ajouter au panier
+          </button>
         </div>
       </Container>
     </main>
