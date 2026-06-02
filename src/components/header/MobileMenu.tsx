@@ -16,10 +16,10 @@ export default function MobileMenu({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="md:hidden">
+    <div className="relative z-50 md:hidden">
       <button
         type="button"
-        className="inline-flex items-center justify-center rounded-md border border-slate-300 p-2 text-slate-700"
+        className="inline-flex items-center justify-center rounded-md border border-[var(--color-border)] bg-white p-2 text-[var(--color-primary)] shadow-sm"
         aria-label="Ouvrir ou fermer le menu"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
@@ -29,15 +29,24 @@ export default function MobileMenu({
       </button>
 
       {isMenuOpen && (
-        <div className="absolute left-0 top-full w-full border-t border-slate-200 bg-white px-6 py-4 shadow-sm">
-          <MenuNav
-            activePage={activePage}
-            onChangePage={onChangePage}
-            className="flex flex-col gap-4 text-sm font-medium"
-            linkClassName="block text-left"
-            onLinkClick={() => setIsMenuOpen(false)}
+        <>
+          <button
+            type="button"
+            aria-label="Fermer le menu"
+            className="fixed inset-0 z-40 bg-transparent"
+            onClick={() => setIsMenuOpen(false)}
           />
-        </div>
+
+          <div className="absolute right-0 top-12 z-50 w-56 rounded-2xl border border-[var(--color-border)] bg-white p-3 shadow-xl">
+            <MenuNav
+              activePage={activePage}
+              onChangePage={onChangePage}
+              className="flex flex-col gap-1 text-sm font-semibold"
+              linkClassName="block w-full rounded-xl px-4 py-3 text-left hover:bg-[var(--color-background)]"
+              onLinkClick={() => setIsMenuOpen(false)}
+            />
+          </div>
+        </>
       )}
     </div>
   );

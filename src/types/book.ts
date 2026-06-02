@@ -1,4 +1,9 @@
-// définit la structure d'un livre
+export type BookVariant = {
+  id: string;
+  label: string;
+  price: number;
+};
+
 export type Book = {
   id: number;
   title: string;
@@ -8,5 +13,5 @@ export type Book = {
   category: string;
   description: string;
   featured: boolean;
-  variants: string[];
+  variants: BookVariant[];
 };
