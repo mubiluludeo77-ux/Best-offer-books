@@ -31,36 +31,26 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout() {
-  // Page actuellement affichée dans l'application.
-  // Cela permet de simuler une navigation single page application avec useState.
+  // Page actuellement affichée dans la navigation SPA
   const [activePage, setActivePage] = useState<PageName>('accueil');
-
-  // Page précédente utilisée pour le bouton retour.
   const [previousPage, setPreviousPage] = useState<PageName | null>(null);
 
-  // Livre actuellement sélectionné pour afficher sa page de détail.
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
-
-  // Livre précédent gardé en mémoire pour le retour.
   const [previousBook, setPreviousBook] = useState<Book | null>(null);
 
-  // Articles actuellement ajoutés au panier.
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  // Change la page affichée sans recharger le site.
   function handleChangePage(page: PageName) {
     setPreviousPage(activePage);
     setPreviousBook(selectedBook);
 
     setActivePage(page);
 
-    // Quand on quitte la page détail, on retire le livre sélectionné.
     if (page !== 'detailLivre') {
       setSelectedBook(null);
     }
   }
 
-  // Sélectionne un livre et affiche sa page de détail.
   function handleSelectBook(book: Book) {
     setPreviousPage(activePage);
     setPreviousBook(selectedBook);
@@ -69,7 +59,6 @@ export default function RootLayout() {
     setActivePage('detailLivre');
   }
 
-  // Retourne à la page précédente.
   function handleGoBack() {
     if (previousPage) {
       setActivePage(previousPage);
@@ -82,7 +71,6 @@ export default function RootLayout() {
     }
   }
 
-  // Ajoute un livre au panier selon la variante choisie.
   function handleAddToCart(book: Book, variant: BookVariant) {
     const cartItemId = `${book.id}-${variant.id}`;
 
@@ -91,8 +79,6 @@ export default function RootLayout() {
         (item) => item.id === cartItemId
       );
 
-      // Si le même livre avec la même variante existe déjà,
-      // on augmente seulement la quantité.
       if (existingItem) {
         return currentItems.map((item) =>
           item.id === cartItemId
@@ -101,7 +87,6 @@ export default function RootLayout() {
         );
       }
 
-      // Sinon, on ajoute un nouvel article au panier.
       return [
         ...currentItems,
         {
@@ -122,7 +107,6 @@ export default function RootLayout() {
     setActivePage('panier');
   }
 
-  // Augmente la quantité d'un article du panier.
   function handleIncreaseQuantity(id: string) {
     setCartItems((currentItems) =>
       currentItems.map((item) =>
@@ -131,8 +115,6 @@ export default function RootLayout() {
     );
   }
 
-  // Diminue la quantité d'un article du panier.
-  // Si la quantité arrive à 0, l'article est retiré.
   function handleDecreaseQuantity(id: string) {
     setCartItems((currentItems) =>
       currentItems
@@ -143,7 +125,6 @@ export default function RootLayout() {
     );
   }
 
-  // Supprime complètement un article du panier.
   function handleRemoveFromCart(id: string) {
     setCartItems((currentItems) =>
       currentItems.filter((item) => item.id !== id)
@@ -155,14 +136,13 @@ export default function RootLayout() {
       lang="fr"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-[var(--color-background)] text-[var(--color-primary)]">
+      <body className="min-h-full text-[var(--color-primary)]">
         <Header activePage={activePage} onChangePage={handleChangePage} />
 
         {activePage !== 'accueil' && activePage !== 'detailLivre' && (
           <BackButton onClick={handleGoBack} />
         )}
 
-        {/* Affichage conditionnel des pages selon la valeur de activePage */}
         {activePage === 'accueil' && (
           <Accueil
             onChangePage={handleChangePage}

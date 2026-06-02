@@ -20,7 +20,7 @@ export default function Hero({ onChangePage }: HeroProps) {
       setActiveSlideIndex((currentIndex) =>
         currentIndex === heroSlides.length - 1 ? 0 : currentIndex + 1
       );
-    }, 4500);
+    }, 3000);
 
     return () => window.clearInterval(intervalId);
   }, []);
