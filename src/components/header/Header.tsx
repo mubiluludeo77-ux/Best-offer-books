@@ -12,7 +12,7 @@ export default function Header({ activePage, onChangePage }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface)]">
       <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Logo />
+        <Logo onClick={() => onChangePage?.('accueil')} />
 
         <div className="hidden md:block">
           <MenuNav

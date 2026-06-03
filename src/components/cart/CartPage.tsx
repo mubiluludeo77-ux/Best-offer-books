@@ -81,6 +81,14 @@ export default function CartPage({
               >
                 Passer à l’achat
               </button>
+
+              <button
+              type="button"
+              onClick={() => onChangePage('livres')}
+              className="mt-6 rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-[var(--color-surface)] transition hover:opacity-90"
+              >
+              Voir d'autre livres
+              </button>
             </aside>
           </div>
         )}
