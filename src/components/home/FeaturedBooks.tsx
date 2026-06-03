@@ -63,7 +63,7 @@ export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
               className="object-cover"
             />
 
-            <div className="absolute inset-0 bg-black/55" />
+            <div className="absolute inset-0 bg-[var(--color-slider-overlay)]" />
 
             <div className="relative z-10 flex min-h-[520px] flex-col justify-end p-6 sm:p-10">
               <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">

@@ -19,7 +19,7 @@ export default function MobileMenu({
     <div className="relative z-50 md:hidden">
       <button
         type="button"
-        className="inline-flex items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-2 text-[var(--color-primary)] shadow-sm"
+        className="inline-flex items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-menu-surface)] p-2 text-[var(--color-primary)] shadow-sm"
         aria-label="Ouvrir ou fermer le menu"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
@@ -33,11 +33,11 @@ export default function MobileMenu({
           <button
             type="button"
             aria-label="Fermer le menu"
-            className="fixed inset-0 z-40 bg-transparent"
+            className="fixed inset-0 z-40 bg-black/10"
             onClick={() => setIsMenuOpen(false)}
           />
 
-          <div className="absolute right-0 top-12 z-50 w-56 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-3 shadow-xl">
+          <div className="absolute right-0 top-12 z-50 w-56 rounded-2xl border border-[var(--color-border)] bg-[var(--color-menu-surface)] p-3 shadow-xl">
             <MenuNav
               activePage={activePage}
               onChangePage={onChangePage}

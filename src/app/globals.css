@@ -6,27 +6,31 @@
 
   /* Fond général naturel avec dégradé doux */
   --color-page-background:
-    radial-gradient(circle at top left, rgba(214, 196, 168, 0.75), transparent 34%),
-    radial-gradient(circle at top right, rgba(191, 209, 214, 0.65), transparent 32%),
+    radial-gradient(circle at top left, rgba(214, 196, 168, 0.5), transparent 34%),
+    radial-gradient(circle at top right, rgba(191, 209, 214, 0.5), transparent 32%),
     linear-gradient(135deg, #f7f3eb 0%, #edf1f2 45%, #e8dfd2 100%);
 
   /* Palette principale du site */
-  --color-background: rgba(247, 243, 235, 0.88);
-  --color-surface: rgba(255, 255, 255, 0.94);
+  --color-background: #f7f3eb;
+  --color-surface: #ffffff;
   --color-primary: #1f2933;
   --color-secondary: #8b6f47;
   --color-muted: #5f6b73;
   --color-border: #d8d0c4;
 
   /* Couleurs complémentaires */
-  --color-card: rgba(255, 255, 255, 0.96);
-  --color-soft: rgba(232, 223, 210, 0.9);
-  --color-hover: rgba(236, 228, 216, 0.95);
+  --color-card: #ffffff;
+  --color-soft: #e8dfd2;
+  --color-hover: #ece4d8;
 
-  /* Hero */
-  --color-hero-overlay: rgba(31, 41, 51, 0.62);
+  /* Hero et sliders */
+  --color-hero-overlay: rgba(31, 41, 51, 0.48);
+  --color-slider-overlay: rgba(31, 41, 51, 0.48);
   --color-hero-text: #ffffff;
   --color-hero-muted: #e8edf0;
+
+  /* Menu */
+  --color-menu-surface: #ffffff;
 
   /* Pied de page */
   --color-footer: #1f2933;

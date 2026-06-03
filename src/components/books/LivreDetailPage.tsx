@@ -73,20 +73,25 @@ export default function LivreDetailPage({
             </h2>
 
             <div className="mt-4 flex flex-wrap gap-3">
-              {book.variants.map((variant) => (
-                <button
-                  key={variant.id}
-                  type="button"
-                  onClick={() => setSelectedVariantId(variant.id)}
-                  className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
-                    selectedVariant.id === variant.id
-                      ? 'border-[var(--color-secondary)] bg-[var(--color-hover)] text-[var(--color-secondary)]'
-                      : 'border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] hover:bg-[var(--color-hover)]'
-                  }`}
-                >
-                  {variant.label}
-                </button>
-              ))}
+              {book.variants.map((variant) => {
+                const isSelected = selectedVariant.id === variant.id;
+
+                return (
+                  <button
+                    key={variant.id}
+                    type="button"
+                    onClick={() => setSelectedVariantId(variant.id)}
+                    className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                      isSelected
+                        ? 'border-[var(--color-secondary)] bg-[var(--color-secondary)] text-white shadow-md'
+                        : 'border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] hover:bg-[var(--color-hover)]'
+                    }`}
+                  >
+                    {isSelected ? '✓ ' : ''}
+                    {variant.label}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
