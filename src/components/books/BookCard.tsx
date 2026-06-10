@@ -7,15 +7,32 @@ type BookCardProps = {
 };
 
 export default function BookCard({ book, onSelectBook }: BookCardProps) {
+  function handleOpenBook() {
+    onSelectBook?.(book);
+  }
+
+  function handleKeyDown(event: React.KeyboardEvent<HTMLElement>) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleOpenBook();
+    }
+  }
+
   return (
-    <article className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+    <article
+      role="button"
+      tabIndex={0}
+      onClick={handleOpenBook}
+      onKeyDown={handleKeyDown}
+      className="cursor-pointer rounded-2xl border border-[var(--color-border)] bg-[var(--color-card)] p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[var(--color-secondary)]"
+    >
       <div className="relative mb-4 h-64 overflow-hidden rounded-xl bg-[var(--color-background)]">
         <Image
           src={book.image}
           alt={book.title}
           fill
           sizes="(max-width: 768px) 100vw, 25vw"
-          className="object-cover"
+          className="object-cover transition duration-300 hover:scale-105"
         />
       </div>
 
@@ -40,13 +57,9 @@ export default function BookCard({ book, onSelectBook }: BookCardProps) {
           {book.price.toFixed(2)} $
         </span>
 
-        <button
-          type="button"
-          onClick={() => onSelectBook?.(book)}
-          className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-semibold text-[var(--color-primary)] transition hover:bg-[var(--color-hover)]"
-        >
+        <span className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-semibold text-[var(--color-primary)] transition">
           Voir
-        </button>
+        </span>
       </div>
     </article>
   );

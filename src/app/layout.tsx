@@ -31,7 +31,6 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout() {
-  // Page actuellement affichée dans la navigation SPA
   const [activePage, setActivePage] = useState<PageName>('accueil');
   const [previousPage, setPreviousPage] = useState<PageName | null>(null);
 
@@ -40,11 +39,22 @@ export default function RootLayout() {
 
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
+  // Nombre total d'articles dans le panier
+  const cartItemsCount = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
+  function scrollToTop() {
+    window.scrollTo(0, 0);
+  }
+
   function handleChangePage(page: PageName) {
     setPreviousPage(activePage);
     setPreviousBook(selectedBook);
 
     setActivePage(page);
+    scrollToTop();
 
     if (page !== 'detailLivre') {
       setSelectedBook(null);
@@ -57,6 +67,7 @@ export default function RootLayout() {
 
     setSelectedBook(book);
     setActivePage('detailLivre');
+    scrollToTop();
   }
 
   function handleGoBack() {
@@ -65,9 +76,11 @@ export default function RootLayout() {
       setSelectedBook(previousBook);
       setPreviousPage(null);
       setPreviousBook(null);
+      scrollToTop();
     } else {
       setActivePage('accueil');
       setSelectedBook(null);
+      scrollToTop();
     }
   }
 
@@ -105,6 +118,7 @@ export default function RootLayout() {
     setPreviousPage(activePage);
     setPreviousBook(selectedBook);
     setActivePage('panier');
+    scrollToTop();
   }
 
   function handleIncreaseQuantity(id: string) {
@@ -137,7 +151,11 @@ export default function RootLayout() {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full text-[var(--color-primary)]">
-        <Header activePage={activePage} onChangePage={handleChangePage} />
+        <Header
+          activePage={activePage}
+          onChangePage={handleChangePage}
+          cartItemsCount={cartItemsCount}
+        />
 
         {activePage !== 'accueil' && activePage !== 'detailLivre' && (
           <BackButton onClick={handleGoBack} />

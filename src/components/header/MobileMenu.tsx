@@ -7,11 +7,13 @@ import { PageName } from '@/data/navItems';
 type MobileMenuProps = {
   activePage?: PageName;
   onChangePage?: (page: PageName) => void;
+  cartItemsCount: number;
 };
 
 export default function MobileMenu({
   activePage,
   onChangePage,
+  cartItemsCount,
 }: MobileMenuProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,6 +43,7 @@ export default function MobileMenu({
             <MenuNav
               activePage={activePage}
               onChangePage={onChangePage}
+              cartItemsCount={cartItemsCount}
               className="flex flex-col gap-1 text-sm font-semibold"
               linkClassName="block w-full rounded-xl px-4 py-3 text-left hover:bg-[var(--color-hover)]"
               onLinkClick={() => setIsMenuOpen(false)}
