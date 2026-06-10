@@ -65,7 +65,14 @@ export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
 
             <div className="absolute inset-0 bg-[var(--color-slider-overlay)]" />
 
-            <div className="relative z-10 flex min-h-[520px] flex-col justify-end p-6 sm:p-10">
+            <button
+              type="button"
+              onClick={() => onSelectBook(currentBook)}
+              className="absolute inset-0 z-10 cursor-pointer"
+              aria-label={`Voir le livre ${currentBook.title}`}
+            />
+
+            <div className="pointer-events-none relative z-20 flex min-h-[520px] flex-col justify-end p-6 sm:p-10">
               <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
                 {currentBook.category}
               </p>
@@ -87,16 +94,12 @@ export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
                   {currentBook.price.toFixed(2)} $
                 </span>
 
-                <button
-                  type="button"
-                  onClick={() => onSelectBook(currentBook)}
-                  className="rounded-full bg-[var(--color-secondary)] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-                >
+                <span className="rounded-full bg-[var(--color-secondary)] px-6 py-3 text-sm font-semibold text-white">
                   Voir le livre
-                </button>
+                </span>
               </div>
 
-              <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
+              <div className="pointer-events-auto mt-8 flex flex-wrap items-center justify-between gap-4">
                 <button
                   type="button"
                   onClick={showPreviousBook}
