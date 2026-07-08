@@ -2,21 +2,19 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { Book, BookVariant } from '@/types/book';
 import Container from '@/components/common/Container';
+import { useCart } from '@/context/CartContext';
 
 type LivreDetailPageProps = {
   book: Book;
-  onBack: () => void;
-  onAddToCart: (book: Book, variant: BookVariant) => void;
 };
 
-export default function LivreDetailPage({
-  book,
-  onBack,
-  onAddToCart,
-}: LivreDetailPageProps) {
-  // Variante choisie par l'utilisateur
+export default function LivreDetailPage({ book }: LivreDetailPageProps) {
+  const router = useRouter();
+  const { addToCart } = useCart();
+
   const [selectedVariantId, setSelectedVariantId] = useState(
     book.variants[0].id
   );
@@ -24,6 +22,11 @@ export default function LivreDetailPage({
   const selectedVariant =
     book.variants.find((variant) => variant.id === selectedVariantId) ||
     book.variants[0];
+
+  function handleAddToCart(variant: BookVariant) {
+    addToCart(book, variant);
+    router.push('/panier');
+  }
 
   return (
     <main className="bg-[var(--color-background)] py-20">
@@ -41,7 +44,7 @@ export default function LivreDetailPage({
         <div>
           <button
             type="button"
-            onClick={onBack}
+            onClick={() => router.back()}
             className="mb-6 text-sm font-semibold text-[var(--color-secondary)] transition hover:opacity-80"
           >
             ← Retour
@@ -50,19 +53,13 @@ export default function LivreDetailPage({
           <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
             {book.category}
           </p>
-
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-[var(--color-primary)]">
             {book.title}
           </h1>
-
-          <p className="mt-2 text-lg text-[var(--color-muted)]">
-            {book.author}
-          </p>
-
+          <p className="mt-2 text-lg text-[var(--color-muted)]">{book.author}</p>
           <p className="mt-6 text-base leading-7 text-[var(--color-muted)]">
             {book.description}
           </p>
-
           <p className="mt-6 text-2xl font-bold text-[var(--color-primary)]">
             {selectedVariant.price.toFixed(2)} $
           </p>
@@ -71,11 +68,9 @@ export default function LivreDetailPage({
             <h2 className="text-lg font-bold text-[var(--color-primary)]">
               Variantes disponibles
             </h2>
-
             <div className="mt-4 flex flex-wrap gap-3">
               {book.variants.map((variant) => {
                 const isSelected = selectedVariant.id === variant.id;
-
                 return (
                   <button
                     key={variant.id}
@@ -97,7 +92,7 @@ export default function LivreDetailPage({
 
           <button
             type="button"
-            onClick={() => onAddToCart(book, selectedVariant)}
+            onClick={() => handleAddToCart(selectedVariant)}
             className="mt-8 rounded-full bg-[var(--color-primary)] px-6 py-3 text-sm font-semibold text-[var(--color-surface)] transition hover:opacity-90"
           >
             Ajouter au panier

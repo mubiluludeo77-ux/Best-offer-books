@@ -2,23 +2,14 @@
 
 import { books } from '@/data/books';
 import { categories } from '@/data/categories';
-import { Book } from '@/types/book';
 import BookCard from '@/components/books/BookCard';
 import Container from '@/components/common/Container';
 import SectionTitle from '@/components/common/SectionTitle';
 
-type CategoriesPageProps = {
-  onSelectBook: (book: Book) => void;
-};
-
-export default function CategoriesPage({ onSelectBook }: CategoriesPageProps) {
+export default function CategoriesPage() {
   function scrollBooksRow(categoryId: number, direction: 'left' | 'right') {
     const row = document.getElementById(`category-row-${categoryId}`);
-
-    if (!row) {
-      return;
-    }
-
+    if (!row) return;
     row.scrollBy({
       left: direction === 'right' ? row.clientWidth : -row.clientWidth,
       behavior: 'smooth',
@@ -31,15 +22,13 @@ export default function CategoriesPage({ onSelectBook }: CategoriesPageProps) {
         <SectionTitle
           eyebrow="Catégories"
           title="Explorer les livres par catégorie"
-          description="Retrouvez nos livres classés selon vos centres d’intérêt."
+          description="Retrouvez nos livres classés selon vos centres d'intérêt."
         />
-
         <div className="mt-12 space-y-16">
           {categories.map((category) => {
             const categoryBooks = books.filter(
               (book) => book.category === category.bookCategory
             );
-
             return (
               <section key={category.id}>
                 <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -47,12 +36,10 @@ export default function CategoriesPage({ onSelectBook }: CategoriesPageProps) {
                     <h2 className="text-2xl font-bold text-[var(--color-primary)]">
                       {category.name}
                     </h2>
-
                     <p className="mt-2 text-sm text-[var(--color-muted)]">
                       {category.description}
                     </p>
                   </div>
-
                   {categoryBooks.length > 1 && (
                     <div className="flex gap-2">
                       <button
@@ -63,7 +50,6 @@ export default function CategoriesPage({ onSelectBook }: CategoriesPageProps) {
                       >
                         ←
                       </button>
-
                       <button
                         type="button"
                         onClick={() => scrollBooksRow(category.id, 'right')}
@@ -75,7 +61,6 @@ export default function CategoriesPage({ onSelectBook }: CategoriesPageProps) {
                     </div>
                   )}
                 </div>
-
                 {categoryBooks.length > 0 ? (
                   <div
                     id={`category-row-${category.id}`}
@@ -86,10 +71,7 @@ export default function CategoriesPage({ onSelectBook }: CategoriesPageProps) {
                         key={book.id}
                         className="w-[82vw] max-w-[320px] flex-none snap-center sm:w-[280px] sm:snap-start"
                       >
-                        <BookCard
-                          book={book}
-                          onSelectBook={onSelectBook}
-                        />
+                        <BookCard book={book} />
                       </div>
                     ))}
                   </div>
