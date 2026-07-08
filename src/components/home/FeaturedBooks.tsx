@@ -2,28 +2,22 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { featuredBooks } from '@/data/books';
-import { Book } from '@/types/book';
 import Container from '@/components/common/Container';
 import SectionTitle from '@/components/common/SectionTitle';
 
-type FeaturedBooksProps = {
-  onSelectBook: (book: Book) => void;
-};
-
-export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
+export default function FeaturedBooks() {
+  const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const currentBook = featuredBooks[currentIndex];
 
-  // Change automatiquement le livre affiché toutes les 4 secondes
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setCurrentIndex((index) =>
         index === featuredBooks.length - 1 ? 0 : index + 1
       );
     }, 4000);
-
     return () => window.clearInterval(intervalId);
   }, []);
 
@@ -39,9 +33,7 @@ export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
     );
   }
 
-  if (!currentBook) {
-    return null;
-  }
+  if (!currentBook) return null;
 
   return (
     <section className="bg-[var(--color-background)] py-20">
@@ -52,8 +44,7 @@ export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
           description="Découvrez une sélection de livres choisis pour inspirer, divertir et accompagner votre lecture."
           align="center"
         />
-
-        <div className="mx-auto mt-10 w-full overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-lg lg:w-[100%]">
+        <div className="mx-auto mt-10 w-full overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-lg">
           <div className="relative min-h-[520px] overflow-hidden">
             <Image
               src={currentBook.image}
@@ -62,43 +53,32 @@ export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
               sizes="(max-width: 1024px) 100vw, 70vw"
               className="object-cover"
             />
-
             <div className="absolute inset-0 bg-[var(--color-slider-overlay)]" />
-
             <button
               type="button"
-              onClick={() => onSelectBook(currentBook)}
+              onClick={() => router.push(`/livres/${currentBook.id}`)}
               className="absolute inset-0 z-10 cursor-pointer"
               aria-label={`Voir le livre ${currentBook.title}`}
             />
-
             <div className="pointer-events-none relative z-20 flex min-h-[520px] flex-col justify-end p-6 sm:p-10">
               <p className="text-sm font-semibold uppercase tracking-wide text-[var(--color-secondary)]">
                 {currentBook.category}
               </p>
-
               <h3 className="mt-3 max-w-2xl text-3xl font-bold text-white sm:text-4xl">
                 {currentBook.title}
               </h3>
-
-              <p className="mt-2 text-base text-slate-200">
-                {currentBook.author}
-              </p>
-
+              <p className="mt-2 text-base text-slate-200">{currentBook.author}</p>
               <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-200">
                 {currentBook.description}
               </p>
-
               <div className="mt-6 flex flex-wrap items-center gap-4">
                 <span className="rounded-full bg-white/90 px-5 py-2 text-sm font-bold text-[var(--color-primary)]">
                   {currentBook.price.toFixed(2)} $
                 </span>
-
                 <span className="rounded-full bg-[var(--color-secondary)] px-6 py-3 text-sm font-semibold text-white">
                   Voir le livre
                 </span>
               </div>
-
               <div className="pointer-events-auto mt-8 flex flex-wrap items-center justify-between gap-4">
                 <button
                   type="button"
@@ -107,7 +87,6 @@ export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
                 >
                   ← Précédent
                 </button>
-
                 <div className="flex gap-2">
                   {featuredBooks.map((book, index) => (
                     <button
@@ -123,7 +102,6 @@ export default function FeaturedBooks({ onSelectBook }: FeaturedBooksProps) {
                     />
                   ))}
                 </div>
-
                 <button
                   type="button"
                   onClick={showNextBook}

@@ -1,50 +1,28 @@
 'use client';
 
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import type { SubmitHandler } from 'react-hook-form';
-
 import Container from '@/components/common/Container';
 import SectionTitle from '@/components/common/SectionTitle';
 
 type DonneesFormulaire = {
-  fullName: string;
-  email: string;
-  subject: string;
+  nom: string;
+  courriel: string;
   message: string;
-  acceptTerms: boolean;
 };
 
 export default function ContactPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const {
     register,
     handleSubmit,
+    formState: { errors, isSubmitSuccessful },
     reset,
-    formState: { errors },
   } = useForm<DonneesFormulaire>({
-    defaultValues: {
-      fullName: '',
-      email: '',
-      subject: '',
-      message: '',
-      acceptTerms: false,
-    },
+    defaultValues: { nom: '', courriel: '', message: '' },
   });
 
-  const onSubmit: SubmitHandler<DonneesFormulaire> = (data) => {
-    console.log('Formulaire validé :', data);
-    setIsSubmitted(true);
+  function onSubmit(donnees: DonneesFormulaire) {
+    console.log('Données envoyées :', donnees);
     reset();
-  };
-
-  function inputClass(hasError: boolean) {
-    return `mt-2 w-full rounded-xl border bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-primary)] outline-none transition ${
-      hasError
-        ? 'border-[var(--color-danger)]'
-        : 'border-[var(--color-border)] focus:border-[var(--color-primary)]'
-    }`;
   }
 
   return (
@@ -55,195 +33,97 @@ export default function ContactPage() {
           title="Contactez Best OfferBook"
           description="Une question sur nos livres, nos offres ou notre librairie ? Envoyez-nous un message."
         />
-
         <div className="mt-10 grid gap-10 lg:grid-cols-2">
           <section className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-sm">
             <h2 className="text-2xl font-bold text-[var(--color-primary)]">
               Nos informations
             </h2>
-
             <div className="mt-6 space-y-4 text-sm leading-6 text-[var(--color-muted)]">
               <p>
-                <span className="font-semibold text-[var(--color-primary)]">
-                  Adresse :
-                </span>{' '}
+                <span className="font-semibold text-[var(--color-primary)]">Adresse :</span>{' '}
                 Ottawa, Canada
               </p>
-
               <p>
-                <span className="font-semibold text-[var(--color-primary)]">
-                  Courriel :
-                </span>{' '}
+                <span className="font-semibold text-[var(--color-primary)]">Courriel :</span>{' '}
                 support@bestofferbook.com
               </p>
-
               <p>
-                <span className="font-semibold text-[var(--color-primary)]">
-                  Disponibilité :
-                </span>{' '}
+                <span className="font-semibold text-[var(--color-primary)]">Disponibilité :</span>{' '}
                 Lundi au vendredi, de 9h à 17h
               </p>
             </div>
           </section>
 
           <form
-            className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-sm"
             onSubmit={handleSubmit(onSubmit)}
-            noValidate
+            className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8 shadow-sm"
           >
+            {isSubmitSuccessful && (
+              <p className="mb-5 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-semibold text-green-700">
+                ✓ Message envoyé avec succès !
+              </p>
+            )}
+
             <div className="grid gap-5">
               <div>
-                <label
-                  htmlFor="fullName"
-                  className="text-sm font-semibold text-[var(--color-primary)]"
-                >
+                <label htmlFor="nom" className="text-sm font-semibold text-[var(--color-primary)]">
                   Nom complet
                 </label>
-
                 <input
-                  id="fullName"
+                  id="nom"
                   type="text"
-                  placeholder="Votre nom complet"
-                  className={inputClass(Boolean(errors.fullName))}
-                  {...register('fullName', {
-                    required: 'Le nom complet est obligatoire.',
-                    minLength: {
-                      value: 2,
-                      message: 'Le nom doit contenir au moins 2 caractères.',
-                    },
+                  placeholder="Votre nom"
+                  className="mt-2 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-primary)] outline-none focus:border-[var(--color-primary)]"
+                  {...register('nom', {
+                    required: 'Champ obligatoire',
+                    minLength: { value: 4, message: 'Minimum 4 caractères' },
                   })}
                 />
-
-                {errors.fullName && (
-                  <p className="mt-1 text-sm text-[var(--color-danger)]">
-                    {errors.fullName.message}
-                  </p>
+                {errors.nom && (
+                  <p className="mt-1 text-xs text-red-600">{errors.nom.message}</p>
                 )}
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="text-sm font-semibold text-[var(--color-primary)]"
-                >
+                <label htmlFor="courriel" className="text-sm font-semibold text-[var(--color-primary)]">
                   Adresse courriel
                 </label>
-
                 <input
-                  id="email"
+                  id="courriel"
                   type="email"
                   placeholder="votre@email.com"
-                  className={inputClass(Boolean(errors.email))}
-                  {...register('email', {
-                    required: 'L’adresse courriel est obligatoire.',
+                  className="mt-2 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-primary)] outline-none focus:border-[var(--color-primary)]"
+                  {...register('courriel', {
+                    required: 'Champ obligatoire',
                     pattern: {
-                      value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                      message: 'Veuillez entrer une adresse courriel valide.',
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: 'Courriel invalide',
                     },
                   })}
                 />
-
-                {errors.email && (
-                  <p className="mt-1 text-sm text-[var(--color-danger)]">
-                    {errors.email.message}
-                  </p>
+                {errors.courriel && (
+                  <p className="mt-1 text-xs text-red-600">{errors.courriel.message}</p>
                 )}
               </div>
 
               <div>
-                <label
-                  htmlFor="subject"
-                  className="text-sm font-semibold text-[var(--color-primary)]"
-                >
-                  Sujet
-                </label>
-
-                <input
-                  id="subject"
-                  type="text"
-                  placeholder="Sujet du message"
-                  className={inputClass(Boolean(errors.subject))}
-                  {...register('subject', {
-                    required: 'Le sujet est obligatoire.',
-                    minLength: {
-                      value: 3,
-                      message: 'Le sujet doit contenir au moins 3 caractères.',
-                    },
-                  })}
-                />
-
-                {errors.subject && (
-                  <p className="mt-1 text-sm text-[var(--color-danger)]">
-                    {errors.subject.message}
-                  </p>
-                )}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="text-sm font-semibold text-[var(--color-primary)]"
-                >
+                <label htmlFor="message" className="text-sm font-semibold text-[var(--color-primary)]">
                   Message
                 </label>
-
                 <textarea
                   id="message"
                   rows={5}
                   placeholder="Votre message"
-                  maxLength={500}
-                  className={inputClass(Boolean(errors.message))}
+                  className="mt-2 w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-primary)] outline-none focus:border-[var(--color-primary)]"
                   {...register('message', {
-                    required: 'Le message est obligatoire.',
-                    minLength: {
-                      value: 10,
-                      message:
-                        'Le message doit contenir au moins 10 caractères.',
-                    },
-                    maxLength: {
-                      value: 500,
-                      message:
-                        'Le message ne doit pas dépasser 500 caractères.',
-                    },
+                    required: 'Champ obligatoire',
+                    minLength: { value: 10, message: 'Minimum 10 caractères' },
                   })}
                 />
-
                 {errors.message && (
-                  <p className="mt-1 text-sm text-[var(--color-danger)]">
-                    {errors.message.message}
-                  </p>
+                  <p className="mt-1 text-xs text-red-600">{errors.message.message}</p>
                 )}
               </div>
-
-              <div>
-                <label className="flex items-start gap-3 text-sm text-[var(--color-muted)]">
-                  <input
-                    type="checkbox"
-                    className="mt-1 h-4 w-4 accent-[var(--color-secondary)]"
-                    {...register('acceptTerms', {
-                      required:
-                        'Vous devez accepter avant d’envoyer le formulaire.',
-                    })}
-                  />
-
-                  <span>
-                    J’accepte que Best OfferBook utilise ces informations pour
-                    répondre à mon message.
-                  </span>
-                </label>
-
-                {errors.acceptTerms && (
-                  <p className="mt-1 text-sm text-[var(--color-danger)]">
-                    {errors.acceptTerms.message}
-                  </p>
-                )}
-              </div>
-
-              {isSubmitted && (
-                <p className="rounded-xl border border-[var(--color-border)] bg-[var(--color-hover)] p-4 text-sm font-semibold text-[var(--color-primary)]">
-                  Votre formulaire a été validé avec succès.
-                </p>
-              )}
 
               <button
                 type="submit"
