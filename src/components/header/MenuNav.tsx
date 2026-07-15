@@ -2,7 +2,9 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 import { FaShoppingCart } from 'react-icons/fa';
+
 import { navItems } from '@/data/navItems';
 import { useCart } from '@/context/CartContext';
 
@@ -18,6 +20,7 @@ export default function MenuNav({
   onLinkClick,
 }: MenuNavProps) {
   const pathname = usePathname();
+  const { t } = useTranslation();
   const { cartItemsCount } = useCart();
 
   return (
@@ -40,6 +43,7 @@ export default function MenuNav({
             {isCart && (
               <span className="relative inline-flex">
                 <FaShoppingCart className="text-lg" />
+
                 {cartItemsCount > 0 && (
                   <span className="absolute -right-3 -top-3 flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--color-secondary)] px-1 text-xs font-bold text-white">
                     {cartItemsCount}
@@ -47,7 +51,8 @@ export default function MenuNav({
                 )}
               </span>
             )}
-            <span>{item.label}</span>
+
+            <span>{t(item.translationKey)}</span>
           </Link>
         );
       })}

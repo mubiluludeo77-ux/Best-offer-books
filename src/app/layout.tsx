@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
+
 import { CartProvider } from '@/context/CartContext';
 import { ThemeProvider } from '@/providers/ThemeProvider';
+import { I18nProvider } from '@/providers/I18nProvider';
+
 import './globals.css';
 
 const geistSans = Geist({
@@ -32,13 +36,15 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full text-[var(--color-primary)]">
-        <ThemeProvider>
-          <CartProvider>
-            <Header />
-            {children}
-            <Footer />
-          </CartProvider>
-        </ThemeProvider>
+        <I18nProvider>
+          <ThemeProvider>
+            <CartProvider>
+              <Header />
+              {children}
+              <Footer />
+            </CartProvider>
+          </ThemeProvider>
+        </I18nProvider>
       </body>
     </html>
   );

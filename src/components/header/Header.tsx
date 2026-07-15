@@ -2,6 +2,7 @@ import Logo from '@/components/common/Logo';
 import MenuNav from '@/components/header/MenuNav';
 import MobileMenu from '@/components/header/MobileMenu';
 import ThemeToggle from '@/components/header/ThemeToggle';
+import LanguageSwitcher from '@/components/header/LanguageSwitcher';
 
 export default function Header() {
   return (
@@ -14,8 +15,8 @@ export default function Header() {
             <MenuNav className="flex items-center gap-6 text-sm font-medium" />
           </div>
 
+          <LanguageSwitcher />
           <ThemeToggle />
-
           <MobileMenu />
         </div>
       </div>
