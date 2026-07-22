@@ -23,6 +23,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Best OfferBook',
   description: 'Librairie en ligne - Trouvez votre prochain livre au meilleur prix',
+  manifest: "/manifest.json"
 };
  
 export default function RootLayout({
