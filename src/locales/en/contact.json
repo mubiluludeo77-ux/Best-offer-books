@@ -1,1 +1,38 @@
-{}
+{
+  "page": {
+    "eyebrow": "Contact",
+    "title": "Contact Best OfferBook",
+    "description": "Have a question about our books, offers or bookstore? Send us a message."
+  },
+  "info": {
+    "title": "Our information",
+    "addressLabel": "Address:",
+    "address": "Ottawa, Canada",
+    "emailLabel": "Email:",
+    "email": "support@bestofferbook.com",
+    "availabilityLabel": "Availability:",
+    "availability": "Monday to Friday, from 9 a.m. to 5 p.m."
+  },
+  "form": {
+    "success": "✓ Message sent successfully!",
+    "error": "An error occurred. Please check your EmailJS credentials.",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Your message",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "errors": {
+      "required": "This field is required",
+      "nameMin": "Minimum 4 characters",
+      "invalidEmail": "Invalid email address",
+      "messageMin": "Minimum 10 characters"
+    }
+  },
+  "email": {
+    "title": "Message from Best OfferBook",
+    "subject": "Message from Best OfferBook"
+  }
+}

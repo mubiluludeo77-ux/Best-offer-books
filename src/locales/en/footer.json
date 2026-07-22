@@ -1,1 +1,16 @@
-{}
+{
+  "description": "Best OfferBook is an online bookstore offering a variety of accessible and carefully selected books for your reading moments.",
+  "categoriesTitle": "Categories",
+  "categories": {
+    "novels": "Novels",
+    "personalDevelopment": "Personal development",
+    "finance": "Personal finance",
+    "relationships": "Relationships"
+  },
+  "informationTitle": "Information",
+  "contact": "Contact us",
+  "location": "Ottawa, Canada",
+  "email": "support@bestofferbook.com",
+  "delivery": "Delivery and offers coming soon",
+  "copyright": "© 2026 Best OfferBook. All rights reserved."
+}

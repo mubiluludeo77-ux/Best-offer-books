@@ -1,10 +1,144 @@
 {
+
   "hero": {
+
     "eyebrow": "Online bookstore",
+
     "title": "Find your next book at the best price",
+
     "description": "Best OfferBook offers a selection of modern, inspiring and affordable books for your reading moments.",
+
     "discoverBooks": "Discover books",
+
     "viewCategories": "View categories",
+
     "showImage": "Show image"
+
+  },
+
+  "featured": {
+
+    "eyebrow": "Selection",
+
+    "title": "Popular books",
+
+    "description": "Discover a selection of books chosen to inspire, entertain and support your reading journey.",
+
+    "viewBook": "View book",
+
+    "previous": "← Previous",
+
+    "next": "Next →",
+
+    "showBook": "Show"
+
+  },
+
+  "categories": {
+
+    "eyebrow": "Categories",
+
+    "title": "Find your next read",
+
+    "description": "Explore our main categories and discover books that match your interests.",
+
+    "items": {
+
+      "1": {
+
+        "name": "Novels",
+
+        "description": "Captivating stories to escape into."
+
+      },
+
+      "2": {
+
+        "name": "Personal development",
+
+        "description": "Books to help you better understand yourself."
+
+      },
+
+      "3": {
+
+        "name": "Finance",
+
+        "description": "Books to help you manage your money better."
+
+      },
+
+      "4": {
+
+        "name": "Relationships",
+
+        "description": "Readings about emotions and human connections."
+
+      },
+
+      "5": {
+
+        "name": "Manga",
+
+        "description": "Japanese adventures full of action and imagination."
+
+      }
+
+    }
+
+  },
+
+  "promo": {
+
+    "eyebrow": "Why choose us",
+
+    "title": "A simple, modern and accessible bookstore",
+
+    "description": "Best OfferBook helps you discover interesting books with a clear and pleasant presentation.",
+
+    "items": {
+
+      "1": {
+
+        "title": "Affordable prices",
+
+        "description": "Selected books with good offers for every budget."
+
+      },
+
+      "2": {
+
+        "title": "Varied books",
+
+        "description": "Novels, personal development, finance and inspiring reads."
+
+      },
+
+      "3": {
+
+        "title": "Careful selection",
+
+        "description": "A collection designed to help every reader find their next book."
+
+      }
+
+    }
+
+  },
+
+  "newsletter": {
+
+    "eyebrow": "Newsletter",
+
+    "title": "Receive our latest offers",
+
+    "description": "Sign up to receive new arrivals, popular books and the best offers.",
+
+    "placeholder": "Your email address",
+
+    "submit": "Subscribe"
+
   }
+
 }
+ 

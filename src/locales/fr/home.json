@@ -6,5 +6,67 @@
     "discoverBooks": "Découvrir les livres",
     "viewCategories": "Voir les catégories",
     "showImage": "Afficher l'image"
+  },
+  "featured": {
+    "eyebrow": "Sélection",
+    "title": "Livres populaires",
+    "description": "Découvrez une sélection de livres choisis pour inspirer, divertir et accompagner votre lecture.",
+    "viewBook": "Voir le livre",
+    "previous": "← Précédent",
+    "next": "Suivant →",
+    "showBook": "Afficher"
+  },
+  "categories": {
+    "eyebrow": "Catégories",
+    "title": "Trouvez votre prochaine lecture",
+    "description": "Explorez nos catégories principales et découvrez des livres adaptés à vos envies.",
+    "items": {
+      "1": {
+        "name": "Romans",
+        "description": "Des histoires captivantes pour s’évader."
+      },
+      "2": {
+        "name": "Développement personnel",
+        "description": "Des livres pour apprendre à mieux se connaître."
+      },
+      "3": {
+        "name": "Finance",
+        "description": "Des ouvrages pour mieux gérer son argent."
+      },
+      "4": {
+        "name": "Relations",
+        "description": "Des lectures autour des émotions et des liens humains."
+      },
+      "5": {
+        "name": "Mangas",
+        "description": "Des aventures japonaises riches en action et en imagination."
+      }
+    }
+  },
+  "promo": {
+    "eyebrow": "Pourquoi nous choisir",
+    "title": "Une librairie simple, moderne et accessible",
+    "description": "Best OfferBook vous aide à découvrir des livres intéressants avec une présentation claire et agréable.",
+    "items": {
+      "1": {
+        "title": "Prix accessibles",
+        "description": "Des livres sélectionnés avec de bonnes offres pour tous les budgets."
+      },
+      "2": {
+        "title": "Livres variés",
+        "description": "Romans, développement personnel, finance et lectures inspirantes."
+      },
+      "3": {
+        "title": "Sélection soignée",
+        "description": "Une collection pensée pour aider chaque lecteur à trouver son prochain livre."
+      }
+    }
+  },
+  "newsletter": {
+    "eyebrow": "Newsletter",
+    "title": "Recevez nos nouvelles offres",
+    "description": "Inscrivez-vous pour recevoir les nouveautés, les livres populaires et les meilleures offres.",
+    "placeholder": "Votre adresse courriel",
+    "submit": "S’inscrire"
   }
 }
