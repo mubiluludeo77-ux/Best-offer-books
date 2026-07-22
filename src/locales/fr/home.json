@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "eyebrow": "Librairie en ligne",
+    "title": "Trouvez votre prochain livre au meilleur prix",
+    "description": "Best OfferBook vous propose une sélection de livres modernes, inspirants et accessibles pour accompagner vos moments de lecture.",
+    "discoverBooks": "Découvrir les livres",
+    "viewCategories": "Voir les catégories",
+    "showImage": "Afficher l'image"
+  }
+}
