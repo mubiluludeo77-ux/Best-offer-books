@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "books": "Livres",
+    "categories": "Catégories",
+    "contact": "Contact",
+    "cart": "Panier"
+  },
+  "language": {
+    "label": "Langue",
+    "fr": "FR",
+    "en": "EN"
+  },
+  "theme": {
+    "dark": "Sombre",
+    "light": "Clair",
+    "goDark": "Passer en mode sombre",
+    "goLight": "Passer en mode clair"
+  },
+  "mobileMenu": {
+    "open": "Ouvrir ou fermer le menu",
+    "close": "Fermer le menu"
+  }
+}

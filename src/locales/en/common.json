@@ -1,24 +1,11 @@
 {
-  "nav": {
-    "home": "Home",
-    "books": "Books",
-    "categories": "Categories",
-    "contact": "Contact",
-    "cart": "Cart"
-  },
-  "language": {
-    "label": "Language"
-  },
-  "theme": {
-    "dark": "Dark",
-    "light": "Light"
-  },
-  "hero": {
-    "eyebrow": "Online bookstore",
-    "title": "Find your next book at the best price",
-    "description": "Best OfferBook offers a selection of modern, inspiring and affordable books for your reading moments.",
-    "discoverBooks": "Discover books",
-    "viewCategories": "View categories",
-    "showImage": "Show image"
+  "actions": {
+    "back": "Back",
+    "view": "View",
+    "seeMore": "See more",
+    "delete": "Delete",
+    "add": "Add",
+    "send": "Send",
+    "loading": "Loading..."
   }
 }

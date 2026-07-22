@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "Home",
+    "books": "Books",
+    "categories": "Categories",
+    "contact": "Contact",
+    "cart": "Cart"
+  },
+  "language": {
+    "label": "Language",
+    "fr": "FR",
+    "en": "EN"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light",
+    "goDark": "Switch to dark mode",
+    "goLight": "Switch to light mode"
+  },
+  "mobileMenu": {
+    "open": "Open or close the menu",
+    "close": "Close the menu"
+  }
+}
