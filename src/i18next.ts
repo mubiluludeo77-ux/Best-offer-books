@@ -1,25 +1,31 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
-
-import frCommon from '@/locales/fr/common.json';
-import enCommon from '@/locales/en/common.json';
-
+ 
+import resources from '@/utils/loadResources';
+ 
+export const supportedLanguages = ['fr', 'en'] as const;
+export type SupportedLanguage = (typeof supportedLanguages)[number];
+ 
 if (!i18n.isInitialized) {
   i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-      resources: {
-        fr: {
-          common: frCommon,
-        },
-        en: {
-          common: enCommon,
-        },
-      },
+      resources,
+      lng: 'fr',
       fallbackLng: 'fr',
-      supportedLngs: ['fr', 'en'],
+      supportedLngs: supportedLanguages,
+      ns: [
+        'common',
+        'header',
+        'footer',
+        'home',
+        'contact',
+        'books',
+        'categories',
+        'cart',
+      ],
       defaultNS: 'common',
       interpolation: {
         escapeValue: false,
@@ -33,5 +39,5 @@ if (!i18n.isInitialized) {
       },
     });
 }
-
+ 
 export default i18n;
