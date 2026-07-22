@@ -1,5 +1,13 @@
+import type { Metadata } from 'next';
+
 import ContactPage from '@/components/contact/ContactPage';
 
-export default function ContactRoutePage() {
+export const metadata: Metadata = {
+  title: 'Contact | Best OfferBook',
+  description:
+    'Contactez notre équipe pour toute question.',
+};
+
+export default function Page() {
   return <ContactPage />;
 }
