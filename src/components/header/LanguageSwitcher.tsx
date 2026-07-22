@@ -18,15 +18,20 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <label className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary)]">
-      <span className="hidden sm:inline">{t('language.label')}</span>
+    <label
+      htmlFor="language-switcher"
+      className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary)]"
+    >
+      <span className="sr-only sm:not-sr-only">{t('language.label')}</span>
 
       <select
+        id="language-switcher"
         value={currentLanguage}
+        aria-label={t('language.label')}
         onChange={(event) =>
           handleChangeLanguage(event.target.value as SupportedLanguage)
         }
-        className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-primary)] outline-none transition hover:bg-[var(--color-hover)]"
+        className="min-h-11 rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-sm text-[var(--color-primary)] outline-none transition hover:bg-[var(--color-hover)]"
       >
         <option value="fr">{t('language.fr')}</option>
         <option value="en">{t('language.en')}</option>

@@ -1,92 +1,92 @@
 @import "tailwindcss";
- 
+
 :root {
   --background: #f5f2ec;
   --foreground: #1f2933;
- 
+
   --color-page-background:
     radial-gradient(circle at top left, rgba(214, 196, 168, 0.5), transparent 34%),
     radial-gradient(circle at top right, rgba(191, 209, 214, 0.5), transparent 32%),
     linear-gradient(135deg, #f7f3eb 0%, #edf1f2 45%, #e8dfd2 100%);
- 
+
   --color-background: #f7f3eb;
   --color-surface: #ffffff;
   --color-primary: #1f2933;
-  --color-secondary: #8b6f47;
-  --color-muted: #5f6b73;
+  --color-secondary: #6f4b1f;
+  --color-muted: #3f4a54;
   --color-border: #d8d0c4;
- 
+
   --color-card: #ffffff;
   --color-soft: #e8dfd2;
   --color-hover: #ece4d8;
- 
-  --color-hero-overlay: rgba(31, 41, 51, 0.48);
-  --color-slider-overlay: rgba(31, 41, 51, 0.48);
+
+  --color-hero-overlay: rgba(31, 41, 51, 0.56);
+  --color-slider-overlay: rgba(31, 41, 51, 0.58);
   --color-hero-text: #ffffff;
-  --color-hero-muted: #e8edf0;
- 
+  --color-hero-muted: #f1f5f9;
+
   --color-menu-surface: #ffffff;
- 
+
   --color-footer: #1f2933;
   --color-footer-text: #f8fafc;
   --color-footer-muted: #cbd5e1;
- 
+
   --color-danger: #a83232;
 }
- 
+
 html.dark {
   --background: #0f172a;
   --foreground: #f8fafc;
- 
+
   --color-page-background:
     radial-gradient(circle at top left, rgba(139, 111, 71, 0.18), transparent 35%),
     radial-gradient(circle at top right, rgba(30, 41, 59, 0.9), transparent 35%),
     linear-gradient(135deg, #020617 0%, #0f172a 45%, #111827 100%);
- 
+
   --color-background: #0f172a;
   --color-surface: #1e293b;
   --color-primary: #f8fafc;
-  --color-secondary: #d6b37c;
-  --color-muted: #cbd5e1;
+  --color-secondary: #f4d28f;
+  --color-muted: #d7e1ea;
   --color-border: #334155;
- 
+
   --color-card: #1e293b;
   --color-soft: #1f2937;
   --color-hover: #334155;
- 
-  --color-hero-overlay: rgba(2, 6, 23, 0.62);
-  --color-slider-overlay: rgba(2, 6, 23, 0.62);
+
+  --color-hero-overlay: rgba(2, 6, 23, 0.68);
+  --color-slider-overlay: rgba(2, 6, 23, 0.68);
   --color-hero-text: #ffffff;
-  --color-hero-muted: #e2e8f0;
- 
+  --color-hero-muted: #f1f5f9;
+
   --color-menu-surface: #1e293b;
- 
+
   --color-footer: #020617;
   --color-footer-text: #f8fafc;
   --color-footer-muted: #cbd5e1;
- 
+
   --color-danger: #f87171;
 }
- 
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
- 
+
 html,
 body {
   min-height: 100%;
 }
- 
+
 body {
   background: var(--color-page-background);
   background-attachment: fixed;
   color: var(--color-primary);
   font-family: Arial, Helvetica, sans-serif;
 }
- 
+
 button,
 a,
 [role="button"],
