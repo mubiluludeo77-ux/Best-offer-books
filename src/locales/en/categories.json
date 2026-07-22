@@ -1,1 +1,68 @@
-{}
+{
+
+  "page": {
+
+    "eyebrow": "Categories",
+
+    "title": "Explore books by category",
+
+    "description": "Find our books organized by your interests.",
+
+    "empty": "No books are available in this category at the moment."
+
+  },
+
+  "scroll": {
+
+    "left": "Scroll left",
+
+    "right": "Scroll right"
+
+  },
+
+  "items": {
+
+    "1": {
+
+      "name": "Novels",
+
+      "description": "Captivating stories to escape into."
+
+    },
+
+    "2": {
+
+      "name": "Personal development",
+
+      "description": "Books to help you better understand yourself."
+
+    },
+
+    "3": {
+
+      "name": "Finance",
+
+      "description": "Books to help you manage your money better."
+
+    },
+
+    "4": {
+
+      "name": "Relationships",
+
+      "description": "Readings about emotions and human connections."
+
+    },
+
+    "5": {
+
+      "name": "Manga",
+
+      "description": "Japanese adventures full of action and imagination."
+
+    }
+
+  }
+
+}
+ 

@@ -1,1 +1,296 @@
-{}
+{
+
+  "page": {
+
+    "eyebrow": "Catalogue",
+
+    "title": "Tous nos livres",
+
+    "description": "Découvrez notre sélection complète de livres disponibles."
+
+  },
+
+  "detail": {
+
+    "back": "← Retour",
+
+    "variantsTitle": "Variantes disponibles",
+
+    "addToCart": "Ajouter au panier"
+
+  },
+
+  "card": {
+
+    "view": "Voir"
+
+  },
+
+  "categoryNames": {
+
+    "Roman": "Roman",
+
+    "Finance personnelle": "Finance personnelle",
+
+    "Développement personnel": "Développement personnel",
+
+    "Relation": "Relation",
+
+    "Manga": "Manga"
+
+  },
+
+  "variants": {
+
+    "papier": "Format papier",
+
+    "numerique": "Format numérique",
+
+    "audio": "Format audio",
+
+    "collector": "Édition collector"
+
+  },
+
+  "items": {
+
+    "1": {
+
+      "title": "La femme de ménage",
+
+      "author": "Freida McFadden",
+
+      "description": "Un roman captivant rempli de secrets, de tension et de rebondissements."
+
+    },
+
+    "2": {
+
+      "title": "La psychologie de l'argent",
+
+      "author": "Morgan Housel",
+
+      "description": "Un livre essentiel pour mieux comprendre notre rapport à l'argent."
+
+    },
+
+    "3": {
+
+      "title": "Aime-toi et la vie t'aimera",
+
+      "author": "Catherine Bensaid",
+
+      "description": "Un ouvrage inspirant pour apprendre à mieux s'accepter."
+
+    },
+
+    "4": {
+
+      "title": "Pourquoi on ne se dit plus je t'aime",
+
+      "author": "Auteur inconnu",
+
+      "description": "Un livre autour des émotions, du silence et des relations humaines."
+
+    },
+
+    "5": {
+
+      "title": "One Piece",
+
+      "author": "Eiichiro Oda",
+
+      "description": "Un manga d'aventure incontournable qui suit Luffy et son équipage dans leur quête du trésor ultime."
+
+    },
+
+    "6": {
+
+      "title": "Death Note",
+
+      "author": "Tsugumi Ohba",
+
+      "description": "Un thriller psychologique haletant où un lycéen obtient un cahier capable de tuer quiconque dont il écrit le nom."
+
+    },
+
+    "7": {
+
+      "title": "Jujutsu Kaisen",
+
+      "author": "Gege Akutami",
+
+      "description": "Un shōnen d'action intense où des sorciers affrontent des esprits maléfiques dans un monde caché du grand public."
+
+    },
+
+    "8": {
+
+      "title": "My Hero Academia",
+
+      "author": "Kōhei Horikoshi",
+
+      "description": "Dans un monde où presque tout le monde possède un super-pouvoir, un jeune garçon sans don rêve de devenir le plus grand héros."
+
+    },
+
+    "9": {
+
+      "title": "Nana",
+
+      "author": "Ai Yazawa",
+
+      "description": "L'histoire croisée de deux jeunes femmes prénommées Nana qui se rencontrent par hasard et partagent un appartement à Tokyo."
+
+    },
+
+    "10": {
+
+      "title": "Fullmetal Alchemist",
+
+      "author": "Hiromu Arakawa",
+
+      "description": "Deux frères alchimistes cherchent la Pierre Philosophale pour retrouver leurs corps perdus lors d'un rituel interdit.",
+
+      "variants": {
+
+        "collector": "Édition Fullmetal"
+
+      }
+
+    },
+
+    "11": {
+
+      "title": "Le mariage parfait",
+
+      "author": "Jeneva Rose",
+
+      "description": "Sa maîtresse a été assassinée. Sa femme est son seul espoir. Un thriller conjugal à couper le souffle."
+
+    },
+
+    "12": {
+
+      "title": "14 ans et portée disparue",
+
+      "author": "Arielle Desabysses",
+
+      "description": "Le récit poignant d'une adolescente portée disparue et des conséquences dévastatrices sur sa famille et ses proches."
+
+    },
+
+    "13": {
+
+      "title": "La fin est révélée",
+
+      "author": "Auteur inconnu",
+
+      "description": "Un roman aux multiples rebondissements où la vérité éclate dans les dernières pages de façon totalement inattendue."
+
+    },
+
+    "14": {
+
+      "title": "L'ego est l'ennemi",
+
+      "author": "Ryan Holiday",
+
+      "description": "Un guide incisif pour comprendre comment l'ego sabote nos ambitions, nos succès et nos relations."
+
+    },
+
+    "15": {
+
+      "title": "La femme puissante",
+
+      "author": "Auteur inconnu",
+
+      "description": "Un livre inspirant dédié aux femmes qui souhaitent libérer leur plein potentiel et s'affirmer dans tous les domaines de leur vie."
+
+    },
+
+    "16": {
+
+      "title": "L'autoroute du millionnaire",
+
+      "author": "MJ DeMarco",
+
+      "description": "Une approche radicale de la création de richesse qui remet en question la sagesse financière conventionnelle."
+
+    },
+
+    "17": {
+
+      "title": "Penser comme un millionnaire",
+
+      "author": "Dean Graziosi",
+
+      "description": "Changer ses habitudes pour réussir et être heureux — les secrets mentaux des personnes qui ont bâti leur fortune."
+
+    },
+
+    "18": {
+
+      "title": "100 conseils pour mieux gérer votre argent",
+
+      "author": "Olivier Decarre",
+
+      "description": "Un guide pratique couvrant immobilier, épargne, impôts, assurance vie et gestion familiale des finances."
+
+    },
+
+    "19": {
+
+      "title": "Become Your Own Financial Advisor",
+
+      "author": "Warren Ingram",
+
+      "description": "Un guide direct pour prendre le contrôle de son avenir financier et devenir plus indépendant."
+
+    },
+
+    "20": {
+
+      "title": "Money Is Everything",
+
+      "author": "Amanda Holden",
+
+      "description": "Un guide moderne et accessible pour naviguer les finances personnelles avec audace."
+
+    },
+
+    "21": {
+
+      "title": "Qui épouser",
+
+      "author": "Magloire K. Agbegnido",
+
+      "description": "10 clés essentielles pour faire un bon choix de conjoint et bâtir une relation amoureuse solide et durable."
+
+    },
+
+    "22": {
+
+      "title": "L'art de faire l'amour à un homme",
+
+      "author": "Linda Lou Paget",
+
+      "description": "Découvrez les multiples facettes du plaisir masculin dans ce guide intime et bienveillant signé Linda Lou Paget."
+
+    },
+
+    "23": {
+
+      "title": "Coaching pour les humanitaires, expatriés et conjoints accompagnants",
+
+      "author": "Nancy Bonamy",
+
+      "description": "Un accompagnement sur mesure pour les personnes vivant à l'étranger : trouver sa place, surmonter les défis et s'épanouir."
+
+    }
+
+  }
+
+}
+ 

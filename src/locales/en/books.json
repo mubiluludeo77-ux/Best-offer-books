@@ -1,1 +1,148 @@
-{}
+{
+  "page": {
+    "eyebrow": "Catalog",
+    "title": "All our books",
+    "description": "Discover our full selection of available books."
+  },
+  "detail": {
+    "back": "← Back",
+    "variantsTitle": "Available formats",
+    "addToCart": "Add to cart"
+  },
+  "card": {
+    "view": "View"
+  },
+  "categoryNames": {
+    "Roman": "Novel",
+    "Finance personnelle": "Personal finance",
+    "Développement personnel": "Personal development",
+    "Relation": "Relationship",
+    "Manga": "Manga"
+  },
+  "variants": {
+    "papier": "Paperback",
+    "numerique": "Digital format",
+    "audio": "Audio format",
+    "collector": "Collector edition"
+  },
+  "items": {
+    "1": {
+      "title": "The Housemaid",
+      "author": "Freida McFadden",
+      "description": "A gripping novel filled with secrets, tension and unexpected twists."
+    },
+    "2": {
+      "title": "The Psychology of Money",
+      "author": "Morgan Housel",
+      "description": "An essential book to better understand our relationship with money."
+    },
+    "3": {
+      "title": "Love Yourself and Life Will Love You",
+      "author": "Catherine Bensaid",
+      "description": "An inspiring book about learning to accept yourself more fully."
+    },
+    "4": {
+      "title": "Why We No Longer Say I Love You",
+      "author": "Unknown author",
+      "description": "A book about emotions, silence and human relationships."
+    },
+    "5": {
+      "title": "One Piece",
+      "author": "Eiichiro Oda",
+      "description": "An essential adventure manga following Luffy and his crew in their quest for the ultimate treasure."
+    },
+    "6": {
+      "title": "Death Note",
+      "author": "Tsugumi Ohba",
+      "description": "A thrilling psychological story where a student obtains a notebook capable of killing anyone whose name is written in it."
+    },
+    "7": {
+      "title": "Jujutsu Kaisen",
+      "author": "Gege Akutami",
+      "description": "An intense action shōnen where sorcerers fight evil spirits hidden from the public world."
+    },
+    "8": {
+      "title": "My Hero Academia",
+      "author": "Kōhei Horikoshi",
+      "description": "In a world where almost everyone has a superpower, a powerless boy dreams of becoming the greatest hero."
+    },
+    "9": {
+      "title": "Nana",
+      "author": "Ai Yazawa",
+      "description": "The intertwined story of two young women named Nana who meet by chance and share an apartment in Tokyo."
+    },
+    "10": {
+      "title": "Fullmetal Alchemist",
+      "author": "Hiromu Arakawa",
+      "description": "Two alchemist brothers search for the Philosopher's Stone to recover the bodies they lost during a forbidden ritual.",
+      "variants": {
+        "collector": "Fullmetal edition"
+      }
+    },
+    "11": {
+      "title": "The Perfect Marriage",
+      "author": "Jeneva Rose",
+      "description": "His mistress has been murdered. His wife is his only hope. A breathtaking domestic thriller."
+    },
+    "12": {
+      "title": "14 Years Old and Missing",
+      "author": "Arielle Desabysses",
+      "description": "The moving story of a missing teenager and the devastating consequences for her family and loved ones."
+    },
+    "13": {
+      "title": "The Ending Revealed",
+      "author": "Unknown author",
+      "description": "A novel full of twists where the truth is revealed in the final pages in a completely unexpected way."
+    },
+    "14": {
+      "title": "Ego Is the Enemy",
+      "author": "Ryan Holiday",
+      "description": "A sharp guide to understanding how ego can sabotage ambition, success and relationships."
+    },
+    "15": {
+      "title": "The Powerful Woman",
+      "author": "Unknown author",
+      "description": "An inspiring book for women who want to unlock their full potential and assert themselves in every area of life."
+    },
+    "16": {
+      "title": "The Millionaire Fastlane",
+      "author": "MJ DeMarco",
+      "description": "A radical approach to building wealth that challenges conventional financial wisdom."
+    },
+    "17": {
+      "title": "Think Like a Millionaire",
+      "author": "Dean Graziosi",
+      "description": "Change your habits to succeed and be happy through the mindset of people who built wealth."
+    },
+    "18": {
+      "title": "100 Tips to Better Manage Your Money",
+      "author": "Olivier Decarre",
+      "description": "A practical guide covering real estate, savings, taxes, life insurance and family finance management."
+    },
+    "19": {
+      "title": "Become Your Own Financial Advisor",
+      "author": "Warren Ingram",
+      "description": "A no-nonsense guide to taking control of your financial future and becoming more independent."
+    },
+    "20": {
+      "title": "Money Is Everything",
+      "author": "Amanda Holden",
+      "description": "A modern and accessible personal finance guide for navigating money with confidence."
+    },
+    "21": {
+      "title": "Who to Marry",
+      "author": "Magloire K. Agbegnido",
+      "description": "10 essential keys to choosing the right spouse and building a strong, lasting relationship."
+    },
+    "22": {
+      "title": "The Art of Making Love to a Man",
+      "author": "Linda Lou Paget",
+      "description": "A caring intimate guide exploring different aspects of male pleasure."
+    },
+    "23": {
+      "title": "Coaching for Humanitarians, Expats and Accompanying Partners",
+      "author": "Nancy Bonamy",
+      "description": "Personalized guidance for people living abroad: finding their place, overcoming challenges and thriving."
+    }
+  }
+}
