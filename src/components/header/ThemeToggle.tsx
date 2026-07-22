@@ -3,7 +3,7 @@
 import { FaMoon, FaSun } from 'react-icons/fa';
 
 import { useTranslation } from 'react-i18next';
-
+ 
 import { useTheme } from '@/providers/ThemeProvider';
  
 export default function ThemeToggle() {

@@ -1,4 +1,3 @@
-
 'use client';
  
 import { createContext, useContext, useEffect, useState } from 'react';
@@ -25,6 +24,12 @@ function isTheme(value: string | null): value is Theme {
 
 }
  
+function applyTheme(theme: Theme) {
+
+  document.documentElement.classList.toggle('dark', theme === 'dark');
+
+}
+ 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const [theme, setThemeState] = useState<Theme>('light');
@@ -37,9 +42,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
       setThemeState(savedTheme);
 
-      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+      applyTheme(savedTheme);
+
+      return;
 
     }
+ 
+    applyTheme('light');
 
   }, []);
  
@@ -49,7 +58,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     localStorage.setItem(STORAGE_KEY, nextTheme);
 
-    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
+    applyTheme(nextTheme);
 
   }
  

@@ -1,5 +1,8 @@
 import Accueil from '@/components/home/Accueil';
+ 
+export default function Home() {
 
-export default function HomePage() {
   return <Accueil />;
+
 }
+ 
