@@ -8,10 +8,11 @@ import { useTranslation } from 'react-i18next';
 import { featuredBooks } from '@/data/books';
 import Container from '@/components/common/Container';
 import SectionTitle from '@/components/common/SectionTitle';
+import { formatPrice } from '@/utils/formatPrice';
  
 export default function FeaturedBooks() {
   const router = useRouter();
-  const { t } = useTranslation('home');
+  const { t, i18n } = useTranslation('home');
   const { t: tBooks } = useTranslation('books');
  
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,7 +56,7 @@ export default function FeaturedBooks() {
     defaultValue: currentBook.description,
   });
  
-  const translatedCategory = tBooks(`categories.${currentBook.category}`, {
+  const translatedCategory = tBooks(`categoryNames.${currentBook.category}`, {
     defaultValue: currentBook.category,
   });
  
@@ -107,7 +108,7 @@ export default function FeaturedBooks() {
  
               <div className="mt-6 flex flex-wrap items-center gap-4">
 <span className="rounded-full bg-white/90 px-5 py-2 text-sm font-bold text-[var(--color-primary)]">
-                  {currentBook.price.toFixed(2)} $
+                  {formatPrice(currentBook.price, i18n.language)}
 </span>
  
                 <span className="rounded-full bg-[var(--color-secondary)] px-6 py-3 text-sm font-semibold text-white">

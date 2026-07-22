@@ -1,1 +1,50 @@
-{}
+{
+
+  "page": {
+
+    "eyebrow": "Cart",
+
+    "title": "Your cart",
+
+    "description": "Find the books you selected before completing your order.",
+
+    "empty": "Your cart is empty.",
+
+    "continueShopping": "Continue shopping"
+
+  },
+
+  "item": {
+
+    "format": "Format",
+
+    "quantity": "Quantity",
+
+    "remove": "Remove",
+
+    "decrease": "Decrease quantity",
+
+    "increase": "Increase quantity"
+
+  },
+
+  "summary": {
+
+    "title": "Order summary",
+
+    "items": "Items",
+
+    "subtotal": "Subtotal",
+
+    "total": "Total",
+
+    "clear": "Clear cart",
+
+    "checkout": "Checkout",
+
+    "note": "Online payment will be available soon."
+
+  }
+
+}
+ 

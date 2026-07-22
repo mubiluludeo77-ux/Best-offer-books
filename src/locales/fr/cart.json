@@ -1,1 +1,50 @@
-{}
+{
+
+  "page": {
+
+    "eyebrow": "Panier",
+
+    "title": "Votre panier",
+
+    "description": "Retrouvez les livres que vous avez sélectionnés avant de finaliser votre commande.",
+
+    "empty": "Votre panier est vide.",
+
+    "continueShopping": "Continuer mes achats"
+
+  },
+
+  "item": {
+
+    "format": "Format",
+
+    "quantity": "Quantité",
+
+    "remove": "Supprimer",
+
+    "decrease": "Diminuer la quantité",
+
+    "increase": "Augmenter la quantité"
+
+  },
+
+  "summary": {
+
+    "title": "Résumé de la commande",
+
+    "items": "Articles",
+
+    "subtotal": "Sous-total",
+
+    "total": "Total",
+
+    "clear": "Vider le panier",
+
+    "checkout": "Passer la commande",
+
+    "note": "Le paiement en ligne sera disponible prochainement."
+
+  }
+
+}
+ 

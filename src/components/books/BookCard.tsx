@@ -3,14 +3,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+ 
 import { Book } from '@/types/book';
+import { formatPrice } from '@/utils/formatPrice';
  
 type BookCardProps = {
   book: Book;
 };
  
 export default function BookCard({ book }: BookCardProps) {
-  const { t } = useTranslation('books');
+  const { t, i18n } = useTranslation('books');
  
   const title = t(`items.${book.id}.title`, {
     defaultValue: book.title,
@@ -59,7 +61,7 @@ export default function BookCard({ book }: BookCardProps) {
  
       <div className="mt-4 flex items-center justify-between">
 <span className="font-bold text-[var(--color-primary)]">
-          {book.price.toFixed(2)} $
+          {formatPrice(book.price, i18n.language)}
 </span>
  
         <span className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-sm font-semibold text-[var(--color-primary)] transition">
