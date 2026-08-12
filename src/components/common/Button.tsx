@@ -21,7 +21,8 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      'bg-[var(--color-primary)] text-white hover:opacity-90',
+      'bg-[var(--color-primary)] text-[var(--color-background)] hover:opacity-90',
+
     secondary:
       'border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-primary)] hover:bg-[var(--color-hover)]',
   };
@@ -37,7 +38,11 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={className}>
+    <button
+      type={type}
+      onClick={onClick}
+      className={className}
+    >
       {children}
     </button>
   );

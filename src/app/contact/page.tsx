@@ -4,10 +4,15 @@ import ContactPage from '@/components/contact/ContactPage';
 
 export const metadata: Metadata = {
   title: 'Contact | Best OfferBook',
+
   description:
-    'Contactez notre équipe pour toute question.',
+    'Contactez Best OfferBook pour toute question concernant nos livres et nos services.',
+
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
-export default function Page() {
+export default function ContactRoute() {
   return <ContactPage />;
 }

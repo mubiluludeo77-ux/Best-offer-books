@@ -24,13 +24,16 @@ export async function generateMetadata({
   params,
 }: LivreDetailRouteProps): Promise<Metadata> {
   const { id } = await params;
+
   const book = findBookById(id);
 
   if (!book) {
     return {
       title: 'Livre introuvable | Best OfferBook',
+
       description:
         'Le livre demandé est introuvable dans le catalogue Best OfferBook.',
+
       robots: {
         index: false,
         follow: false,
@@ -40,7 +43,13 @@ export async function generateMetadata({
 
   return {
     title: `${book.title} | Best OfferBook`,
+
     description: book.description,
+
+    alternates: {
+      canonical: `/livres/${id}`,
+    },
+
     keywords: [
       book.title,
       book.author,
@@ -49,10 +58,12 @@ export async function generateMetadata({
       'librairie en ligne',
       'Best OfferBook',
     ],
+
     openGraph: {
       title: `${book.title} | Best OfferBook`,
       description: book.description,
       type: 'book',
+
       images: [
         {
           url: book.image,
@@ -60,6 +71,7 @@ export async function generateMetadata({
         },
       ],
     },
+
     twitter: {
       card: 'summary_large_image',
       title: `${book.title} | Best OfferBook`,
@@ -73,6 +85,7 @@ export default async function LivreDetailRoute({
   params,
 }: LivreDetailRouteProps) {
   const { id } = await params;
+
   const book = findBookById(id);
 
   if (!book) {

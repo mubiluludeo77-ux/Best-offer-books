@@ -3,11 +3,16 @@ import type { Metadata } from 'next';
 import Accueil from '@/components/home/Accueil';
 
 export const metadata: Metadata = {
-  title: 'Accueil | Best OfferBook',
+  title: 'Best OfferBook',
+
   description:
-    'Découvrez les meilleurs livres au meilleur prix chez Best OfferBook.',
+    'Librairie en ligne - Trouvez votre prochain livre au meilleur prix',
+
+  alternates: {
+    canonical: '/',
+  },
 };
 
-export default function Home() {
+export default function HomePage() {
   return <Accueil />;
 }
