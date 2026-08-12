@@ -1,8 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { HiDownload } from 'react-icons/hi';
-import { IoIosCloseCircle } from 'react-icons/io';
 
 import { useInstalledDate } from '@/providers/InstalledDateProvider';
 
@@ -14,18 +12,62 @@ interface BeforeInstallPromptEvent extends Event {
   }>;
 }
 
+function DownloadIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 3v12" />
+      <path d="m7 10 5 5 5-5" />
+      <path d="M5 21h14" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="m9 9 6 6" />
+      <path d="m15 9-6 6" />
+    </svg>
+  );
+}
+
 export default function InstallPrompt() {
   const [installPrompt, setInstallPrompt] =
-    useState<BeforeInstallPromptEvent | null>(null);
+    useState<BeforeInstallPromptEvent | null>(
+      null
+    );
 
-  const [installDate, setInstallDate] = useInstalledDate();
+  const [installDate, setInstallDate] =
+    useInstalledDate();
 
   const [currentDate] = useState(() =>
     Math.floor(Date.now() / 1000)
   );
 
   useEffect(() => {
-    const getInstallPrompt = (event: Event) => {
+    const getInstallPrompt = (
+      event: Event
+    ) => {
       event.preventDefault();
 
       setInstallPrompt(
@@ -61,8 +103,6 @@ export default function InstallPrompt() {
   }, []);
 
   const handleClose = () => {
-    // On mémorise seulement la fermeture de la grande bannière.
-    // On garde installPrompt pour permettre une installation plus tard.
     setInstallDate(currentDate);
   };
 
@@ -98,21 +138,19 @@ export default function InstallPrompt() {
               onClick={handleInstall}
               className="flex min-h-11 items-center gap-2 text-base font-medium text-slate-900 hover:text-slate-700"
             >
-              <HiDownload
-                className="text-xl"
-                aria-hidden="true"
-              />
+              <DownloadIcon />
 
-              Cliquez ici pour installer l&apos;application !
+              Cliquez ici pour installer
+              l&apos;application !
             </button>
 
             <button
               type="button"
               onClick={handleClose}
-              className="flex min-h-11 min-w-11 items-center justify-center text-2xl text-slate-700 hover:text-slate-900"
+              className="flex min-h-11 min-w-11 items-center justify-center text-slate-700 hover:text-slate-900"
               aria-label="Fermer la proposition d'installation"
             >
-              <IoIosCloseCircle aria-hidden="true" />
+              <CloseIcon />
             </button>
           </div>
         </div>
@@ -121,27 +159,10 @@ export default function InstallPrompt() {
       <button
         type="button"
         onClick={handleInstall}
-        className="
-          fixed bottom-5 right-5 z-50
-          flex min-h-12 items-center gap-2
-          rounded-full
-          bg-slate-900 px-5 py-3
-          font-semibold text-white
-          shadow-lg
-          transition
-          hover:scale-105
-          hover:bg-slate-700
-          focus:outline-none
-          focus:ring-2
-          focus:ring-slate-500
-          focus:ring-offset-2
-        "
+        className="fixed bottom-5 right-5 z-50 flex min-h-12 items-center gap-2 rounded-full bg-slate-900 px-5 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
         aria-label="Installer Best OfferBook"
       >
-        <HiDownload
-          className="text-xl"
-          aria-hidden="true"
-        />
+        <DownloadIcon />
 
         Installer
       </button>

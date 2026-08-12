@@ -5,9 +5,22 @@
   --foreground: #1f2933;
 
   --color-page-background:
-    radial-gradient(circle at top left, rgba(214, 196, 168, 0.5), transparent 34%),
-    radial-gradient(circle at top right, rgba(191, 209, 214, 0.5), transparent 32%),
-    linear-gradient(135deg, #f7f3eb 0%, #edf1f2 45%, #e8dfd2 100%);
+    radial-gradient(
+      circle at top left,
+      rgba(214, 196, 168, 0.5),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(191, 209, 214, 0.5),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #f7f3eb 0%,
+      #edf1f2 45%,
+      #e8dfd2 100%
+    );
 
   --color-background: #f7f3eb;
   --color-surface: #ffffff;
@@ -39,9 +52,22 @@ html.dark {
   --foreground: #f8fafc;
 
   --color-page-background:
-    radial-gradient(circle at top left, rgba(139, 111, 71, 0.18), transparent 35%),
-    radial-gradient(circle at top right, rgba(30, 41, 59, 0.9), transparent 35%),
-    linear-gradient(135deg, #020617 0%, #0f172a 45%, #111827 100%);
+    radial-gradient(
+      circle at top left,
+      rgba(139, 111, 71, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(30, 41, 59, 0.9),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #020617 0%,
+      #0f172a 45%,
+      #111827 100%
+    );
 
   --color-background: #0f172a;
   --color-surface: #1e293b;
@@ -71,8 +97,6 @@ html.dark {
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 html,
